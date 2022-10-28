@@ -28,6 +28,9 @@
             <label for="name"><b>Work_Hours</b></label>
             <input type="text" class="form-control" id="name" placeholder="Enter Employee Working hour">
         </div>
+        <div class="form-group">
+            <button>Submit</button>
+        </div>
 
         
 
