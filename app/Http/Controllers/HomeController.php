@@ -15,8 +15,5 @@ class HomeController extends Controller
     {
         return view('backend.pages.about');
     }
-    public function dashboard()
-    {
-        return view('backend.pages.dashboard');
-    }
+    
 }
