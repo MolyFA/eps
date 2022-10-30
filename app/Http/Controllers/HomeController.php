@@ -11,6 +11,9 @@ class HomeController extends Controller
        
          return view('backend.master');
     }
+    
+
+    
     public function aboutus()
     {
         return view('backend.pages.about');

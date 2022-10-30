@@ -29,7 +29,7 @@
             <input type="text" class="form-control" id="name" placeholder="Enter Employee Working hour">
         </div>
         <div class="form-group">
-            <button>Submit</button>
+            <button  class="btn btn-primary">Submit</button>
         </div>
 
         

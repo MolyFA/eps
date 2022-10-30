@@ -5,7 +5,7 @@
 <h1> All Employees</h1>
 <br>
 
-        <a href="{{url('/admin/create')}}" class="btn btn-warning">
+        <a href="{{url('/admin/create')}}" class="btn btn-success">
         Add Employee
         </a>
     <br>

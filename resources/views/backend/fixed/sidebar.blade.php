@@ -21,7 +21,7 @@
                     </li>
                    
                     <li>
-                        <a class="has-arrow" href="{{url('/')}}" aria-expanded="false">
+                        <a class="has-arrow" href="{{url('/employee')}}" aria-expanded="false">
                             <i class=""></i><span class="nav-text">Employee Information</span>
                         </a>
 
