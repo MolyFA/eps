@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string(column:'phone_number',length: 20);
             $table->string(column:'email',length:25);
             $table->text(column:'address',);
+            $table->string(column:'gender',length:10);
+            $table->digit(column:'age',length:5);
+            $table->text(column:'position',);
             $table->timestamps();
         });
     }

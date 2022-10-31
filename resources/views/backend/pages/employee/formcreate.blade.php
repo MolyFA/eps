@@ -19,10 +19,7 @@
             <label for="number"><b>Phone Number</b></label>
             <input type="digit" class="form-control" id="number" placeholder="Enter Employee Phone number">
         </div>
-        <div class="form-group">
-            <label for="Hidden File"><b>Hidden File</b></label>
-            <input type="hidden" class="form-control" id="number" placeholder="Enter Employee Phone number">
-        </div>
+
         <div class="form-group">
         <label for="identify"><b>Gender</b></label><br>
           <input type="radio" id="male"  value="male">
@@ -33,16 +30,6 @@
           <label for="other">Other</label>
         </div>
         
-        <div class="form-group">
-        <label for="identify"><b>Employee Launch</b></label><br>
-        <input type="checkbox" id="time1" name="time1" value="1:30">
-  <label for="time1"> 1:30 PM</label><br>
-  <input type="checkbox" id="time2" name="time2" value="1:40">
-  <label for="time2"> 1:40 PM</label><br>
-  <input type="checkbox" id="time3" name="time3" value="">
-  <label for="time3"> 1:50 PM</label><br><br>
-  
-</div>
 <div class="form-group">
             <label for="number"><b>Joining Date</b></label>
             <input type="date" class="form-control" id="number" placeholder="Enter Employee date">
