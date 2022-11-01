@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('emploees', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length: 50);
-            $table->string(column:'phone_number',length: 20);
-            $table->string(column:'email',length:25);
-            $table->text(column:'address',);
-            $table->string(column:'gender',length:10);
-            $table->digit(column:'age',length:5);
-            $table->text(column:'position',);
+            $table->string('name',50);
+            $table->string('phone_number',20);
+            $table->string('email',25);
+            $table->text('address',);
+            $table->string('gender',10);
+            $table->string('age',5);
+            $table->text('position',);
             $table->timestamps();
         });
     }

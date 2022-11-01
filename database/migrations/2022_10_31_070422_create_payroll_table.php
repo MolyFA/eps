@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('payroll', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length:100);
-            $table->string(column:'salary_advanced',length:50);
-            $table->string(column:'monthly_salary',length:50);
-            $table->string(column:'yearly_salary',length:100);
-            $table->string(column:'bonus_salary',length:30);
-            $table->string(column:'deduction_salary',length:30);
+            $table->string('name',100);
+            $table->string('salary_advanced',50);
+            $table->string('monthly_salary',50);
+            $table->string('yearly_salary',100);
+            $table->string('bonus_salary',30);
+            $table->string('deduction_salary',30);
+            
             $table->timestamps();
         });
     }

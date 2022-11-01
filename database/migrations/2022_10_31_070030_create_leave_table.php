@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('leave', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length:100);
-            $table->string(column:'password',length:50);
-            $table->text(column:'sick_leave',);
-            $table->text(column:'casual_leave',);
-            $table->text(column:'annual_leave',);
+            $table->string('name',100);
+            $table->string('password',50);
+            $table->text('sick_leave',);
+            $table->text('casual_leave',);
+            $table->text('annual_leave',);
             $table->timestamps();
         });
     }

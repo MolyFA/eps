@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length:50);
-            $table->string(column:'email',length:100);
-            $table->string(column:'password',length:30);
+            $table->string('name',);
+            $table->string('email',100);
+            $table->string('password',30);
             $table->timestamps();
         });
     }

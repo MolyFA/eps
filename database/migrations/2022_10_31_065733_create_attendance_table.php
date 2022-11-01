@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('attendance', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'name',length:100);
-            $table->string(column:'password',length:50);
+            $table->string('name',100);
+            $table->string('password',50);
             $table->timestamps();
         });
     }
