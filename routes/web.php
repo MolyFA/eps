@@ -5,6 +5,8 @@ use App\Http\Controllers\EmployeeController;
 
 
 
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +24,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'home']);
 Route::get('/employee',[EmployeeController::class,'field']);
 Route::get('/employee/form',[EmployeeController::class,'formcreate']);
-Route::get('/about',[HomeController::class,'aboutus']);
+
 Route::get('/admin',[AdminController::class,'list']);
 Route::get('/admin/create',[AdminController::class,'createForm']);
+Route::post('/admin/employee',[AdminController::class,'createEmployee'])->name('admin.employee');
+
+
+
 
 
 

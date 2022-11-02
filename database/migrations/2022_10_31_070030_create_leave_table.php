@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('leave', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->string('password',50);
-            $table->text('sick_leave',);
-            $table->text('casual_leave',);
-            $table->text('annual_leave',);
+            $table->text('leave_type',);
+            $table->text('leave_day',);
             $table->timestamps();
         });
     }

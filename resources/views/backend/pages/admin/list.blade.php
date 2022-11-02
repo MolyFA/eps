@@ -6,7 +6,7 @@
 <br>
 
         <a href="{{url('/admin/create')}}" class="btn btn-success">
-        Add Employee
+        Create Employee
         </a>
     <br>
 

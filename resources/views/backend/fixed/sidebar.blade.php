@@ -9,12 +9,12 @@
                     
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="{{url('/admin')}}" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Admin</span>
+                            <i class=""></i><span class="nav-text">Any user</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a class="has-arrow" href="{{url('/about')}}" aria-expanded="false">
+                        <a class="has-arrow" href="{{url('/admin/manager')}}" aria-expanded="false">
                             <i class=""></i> <span class="nav-text">Manager</span>
                         </a>
                         
