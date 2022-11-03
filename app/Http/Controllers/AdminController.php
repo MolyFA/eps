@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Anyuser;
+use App\Models\AnyUser;
 
 use Illuminate\Http\Request;
 
@@ -18,12 +18,13 @@ class AdminController extends Controller
     }
     public function createEmployee(Request $request)
     {
-    //    dd($request->all());
-      Anyuser::create([
-        'email'=>$request->user_name,
+      //  dd($request->all());
+      AnyUser::create([
+        'email'=>$request->user_email,
         'password'=>$request->user_password,
 
 
       ]);
-    }
+      return redirect()->back(); 
+        }
 }

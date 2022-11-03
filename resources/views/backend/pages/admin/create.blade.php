@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="email"><b>Email</b></label>
-            <input type="string" class="form-control" id="name"name="user_email" placeholder="Enter Employee Name">
+            <input type="text" class="form-control" id="name"name="user_email" placeholder="Enter Employee Name">
         </div>
        <div class="form-group">
             <label for="password"><b>Password</b></label>
