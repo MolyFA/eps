@@ -25,7 +25,7 @@ Route::get('/',[HomeController::class,'home']);
 Route::get('/employee',[EmployeeController::class,'field']);
 Route::get('/employee/form',[EmployeeController::class,'formcreate']);
 
-Route::get('/admin',[AdminController::class,'list']);
+Route::get('/admin',[AdminController::class,'list'])->name('admin');
 Route::get('/admin/create',[AdminController::class,'createForm']);
 Route::post('/admin/employee',[AdminController::class,'createEmployee'])->name('admin.employee');
 

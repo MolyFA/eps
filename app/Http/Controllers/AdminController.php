@@ -9,8 +9,14 @@ class AdminController extends Controller
 {
     public function list()
     {
-        return view('backend.pages.admin.list');
+      
+        $user_list=AnyUser::all();
+        //dd($user_list);
+        return view('backend.pages.admin.list',compact('user_list'));
     }
+
+
+
     public function createForm()
     {
        

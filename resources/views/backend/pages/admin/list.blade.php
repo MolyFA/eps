@@ -8,41 +8,35 @@
         <a href="{{url('/admin/create')}}" class="btn btn-success">
         Create Employee
         </a>
-    <br>
+        <br>
+
 
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
+            <th scope="col">ID</th>
             <th scope="col">Email</th>
-            <th scope="col">Phone</th>
+            <th scope="col">Password</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
+            @foreach($user_list as $data)
+        
         <tr>
-            <th scope="row">1</th>
-            <td>A</td>
-            <td>Uttara</td>
-            <td>A@gmail.com</td>
-            <td>01332</td>
+            <th scope="row">{{$data->id}}</th>
+            <td>{{$data->email}}</td>
+            <td>{{$data->password}}</td>
             
+            <td>
+                <a href="" class="btn btn-outline-primary">Update</a>
+                <a href="" class="btn btn-outline-danger">Delete</a>
+                <a href="" class="btn btn-outline-success">View</a>
+            </td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>B</td>
-            <td>Banani</td>
-            <td>B@gmail.com</td>
-            <td>01456</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>C</td>
-            <td>Mirpur</td>
-            <td>C@gmail.com</td>
-            <td>01868</td>
-        </tr>
+        
+        @endforeach
+        
         </tbody>
     </table>
 
