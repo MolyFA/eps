@@ -27,6 +27,11 @@ class AdminController extends Controller
     }
     public function createEmployee(Request $request)
     {
+      $request->validate([
+        'user_password'=>'required|unique:any_users,password',
+
+ 
+      ]);
       
         //dd($request->all());
       AnyUser::create([
