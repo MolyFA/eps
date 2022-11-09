@@ -14,7 +14,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">ID</th>
+            
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Action</th>
@@ -24,21 +24,24 @@
             @foreach($user_list as $data)
         
         <tr>
-            <th scope="row">{{$data->id}}</th>
+            
             <td>{{$data->email}}</td>
             <td>{{$data->password}}</td>
+            
             
             <td>
                 <a href="" class="btn btn-outline-primary">Update</a>
                 <a href="" class="btn btn-outline-danger">Delete</a>
                 <a href="" class="btn btn-outline-success">View</a>
             </td>
+            
         </tr>
         
         @endforeach
         
         </tbody>
     </table>
-
+    
+  {{$user_list->links()}}
 
 @endsection

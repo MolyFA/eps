@@ -9,8 +9,11 @@ class AdminController extends Controller
 {
     public function list()
     {
-      
-        $user_list=AnyUser::all();
+
+
+      $user_list=AnyUser::paginate(5);
+       //$user_list=AnyUser::all();
+        
         //dd($user_list);
         return view('backend.pages.admin.list',compact('user_list'));
     }
@@ -24,10 +27,12 @@ class AdminController extends Controller
     }
     public function createEmployee(Request $request)
     {
-      //  dd($request->all());
+      
+        //dd($request->all());
       AnyUser::create([
+        
         'email'=>$request->user_email,
-        'password'=>$request->user_password,
+        'password'=>$request->user_password
 
 
       ]);

@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leave', function (Blueprint $table) {
+        Schema::create('any_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->text('leave_type',);
-            $table->text('leave_day',);
+            $table->string('email',50);
+            $table->string('password',50);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leave');
+        Schema::dropIfExists('any_users');
     }
 };

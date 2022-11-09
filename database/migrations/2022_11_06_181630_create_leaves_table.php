@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payroll', function (Blueprint $table) {
+        Schema::create('leaves', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->string('salary_advanced',50);
-            $table->string('monthly_salary',50);
-            $table->string('yearly_salary',100);
-            $table->string('bonus_salary',30);
-            $table->string('deduction_salary',30);
-            
+            $table->text('leave_type',);
+            $table->text('leave_day',);
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payroll');
+        Schema::dropIfExists('leaves');
     }
 };
