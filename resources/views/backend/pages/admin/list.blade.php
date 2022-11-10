@@ -14,9 +14,10 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            
+           
             <th scope="col">Email</th>
             <th scope="col">Password</th>
+            <th scope="col">Image</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -27,6 +28,11 @@
             
             <td>{{$data->email}}</td>
             <td>{{$data->password}}</td>
+            <td>
+                
+                <img  width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="employee_image">
+                
+            </td>
             
             
             <td>
