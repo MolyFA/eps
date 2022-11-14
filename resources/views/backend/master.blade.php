@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +47,7 @@
 
 
 
-    @include('backend.fixed.header')
+   @include('backend.fixed.header')
        
         
   

@@ -1,27 +1,4 @@
- <!--**********************************
-            Nav header start
-        ***********************************-->
-        <div class="nav-header">
-            <div class="brand-logo">
-                <a href="index.html">
-                    
-
-                    
-                    <span class="brand-title">
-                      
-                    </span>
-                </a>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-
-
-
-
- <!--**********************************
+<!--**********************************
 Header start
         ***********************************-->
         <div class="header">    
@@ -45,6 +22,11 @@ Header start
                         </div>
                     </div>
                 </div>
+                
+
+
+
+
                 <div class="header-right">
                     <ul class="clearfix">
                         <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
@@ -85,17 +67,24 @@ Header start
                             </div>
                             <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                 <div class="dropdown-content-body">
-                                    <ul>
+
+                                <ul>
 
 
                                         
-                                        <hr class="my-2">
-                                        <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
-                                    </ul>
-                                </div>
+                 <hr class="my-2">
+                    <li>
+                      <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                     </li>
+                 <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+
+
+                  </ul>
+             <div class="nav-item text-nowrap">
+                   <a class="nav-link px-3" href="#">Sign out</a>
+                    </div>
+
+                                
                             </div>
                         </li>
                     </ul>
@@ -105,6 +94,10 @@ Header start
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
-        
-        
-        
+
+
+
+
+
+
+
