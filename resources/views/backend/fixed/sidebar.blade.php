@@ -68,6 +68,9 @@
                         </a>
                    </li>
                    
+                   
+                   <a class="btn btn-primary" href="{{route('logout')}}">Logout</a>
+                   
                </div>
         </div>
         <!--**********************************
