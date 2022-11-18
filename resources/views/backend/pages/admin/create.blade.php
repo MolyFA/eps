@@ -13,12 +13,16 @@
     @csrf
            
      <div class="form-group">
-            <label for="email"><b>Email</b></label>
-            <input type="string" class="form-control" id="email"   name="user_email" placeholder="Enter Employee Email">
+            <label for="name"><b>Name</b></label>
+            <input type="string" class="form-control" id="name"   name="user_name" placeholder="Enter Employee name">
         </div>
         <div class="form-group">
-            <label for="password"><b>Password</b></label>
-            <input required type="string" class="form-control" id="password"  name="user_password" placeholder="Enter Employee password">
+            <label for="email"><b>Email</b></label>
+            <input required type="string" class="form-control" id="email"  name="user_email" placeholder="Enter Employee email">
+        </div>
+        <div class="form-group">
+            <label for="phone"><b>Phone Number</b></label>
+            <input required type="string" class="form-control" id="phone"  name="phone_number" placeholder="Enter Employee email">
         </div>
         <div class="form-group">
             <label for="image">Upload Image</label>

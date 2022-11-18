@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\AnyUser;
+use App\Models\Admin;
 
 use Illuminate\Http\Request;
 
@@ -11,8 +11,8 @@ class AdminController extends Controller
     {
 
 
-      $user_list=AnyUser::paginate(5);
-       //$user_list=AnyUser::all();
+      $user_list=Admin::paginate(5);
+       //$user_list=Admin::all();
         
         //dd($user_list);
         return view('backend.pages.admin.list',compact('user_list'));
@@ -31,7 +31,7 @@ class AdminController extends Controller
       //dd($request->all());
       //dd(date('Y-m-d H:i:s'));
       $request->validate([
-        'user_password'=>'required|unique:any_users,password',//after unique database table name and column name
+        'user_email'=>'required|unique:admin,email',//after unique database table name and column name
         'image'=>'required'
  
       ]);
@@ -55,10 +55,11 @@ class AdminController extends Controller
 
 
         //dd($request->all());
-      AnyUser::create([
+       Admin::create([
         
+        'name'=>$request->user_name,
         'email'=>$request->user_email,
-        'password'=>$request->user_password,
+        'phone'=>$request->phone_number,
         'image'=>$fileName
 
 

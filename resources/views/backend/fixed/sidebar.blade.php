@@ -15,61 +15,24 @@
                     
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="{{url('/admin')}}" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Admin</span>
+                            <i class=""></i><span class="nav-text">User</span>
                         </a>
                     </li>
-                    
-                    <li>
-                        <a class="has-arrow" href="{{url('/admin/manager')}}" aria-expanded="false">
-                            <i class=""></i> <span class="nav-text">Employee</span>
-                        </a>
-                        
-                    </li>
-                   
-                    <li>
-                        <a class="has-arrow" href="{{url('/employee')}}" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Designation</span>
-                        </a>
-                   </li>
-                   <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Department</span>
-                        </a>
-                   </li>
-                   <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Attendance</span>
-                        </a>
-                    </li>
-                        <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Leave</span>
-                        </a>
-                       </li>
-                        <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Leave Apply</span>
-                        </a>
-                      </li>
-                        <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Leave Type</span>
-                        </a>
 
-                   </li>
-                   <li>
+                    
+                   
+                
+
+                    <li>
                         <a class="has-arrow" href="{{url('/employee')}}" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Salary</span>
-                        </a>
-                   </li>
-                   <li>
-                        <a class="has-arrow" href="" aria-expanded="false">
-                            <i class=""></i><span class="nav-text">Payment</span>
+                            <i class=""></i><span class="nav-text">Employee</span>
                         </a>
                    </li>
                    
+
                    
-                   <a class="btn btn-primary" href="{{route('logout')}}">Logout</a>
+                   
+                   <a class="btn btn-secondary" href="{{route('logout')}}">Logout</a>
                    
                </div>
         </div>

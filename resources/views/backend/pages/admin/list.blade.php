@@ -15,8 +15,9 @@
         <thead>
         <tr>
            
+            <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
+            <th scope="col">Phone Number</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
         </tr>
@@ -26,8 +27,10 @@
         
         <tr>
             
+            <td>{{$data->name}}</td>
             <td>{{$data->email}}</td>
-            <td>{{$data->password}}</td>
+            <td>{{$data->phone}}</td>
+            
             <td>
                 
                 <img  width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="employee_image">

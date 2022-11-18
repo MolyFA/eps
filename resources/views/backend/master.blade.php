@@ -111,9 +111,6 @@
     <!-- ChartistJS -->
     <script src="{{url('/plugins/chartist/js/chartist.min.js')}}"></script>
     <script src="{{url('/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
-
-
-
     <script src="{{url('/js/dashboard/dashboard-1.js')}}"></script>
 
 </body>

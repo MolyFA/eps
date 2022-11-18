@@ -31,8 +31,21 @@ Route::group(['middleware'=>'auth'],function(){
 
 Route::get('/',[HomeController::class,'home'])->name('dashboard');
 
-Route::get('/employee',[EmployeeController::class,'field']);
-Route::get('/employee/form',[EmployeeController::class,'formcreate']);
+
+
+
+Route::get('/employee',[EmployeeController::class,'field'])->name('employee');
+Route::get('/employee/form',[EmployeeController::class,'formcreate'])->name('employee.form');
+Route::post('/employee/form/store',[EmployeeController::class,'store'])->name('form.store');
+Route::get('/employee/delete/{employee_id}',[EmployeeController::class,'deleteEmployee'])->name('employee.delete');
+Route::get('/employe/view/{employee_id}',[EmployeeController::class,'viewEmployee'])->name('employee.view');
+
+
+
+
+
+
+
 
 Route::get('/admin',[AdminController::class,'list'])->name('admin');
 Route::get('/admin/create',[AdminController::class,'createForm']);
