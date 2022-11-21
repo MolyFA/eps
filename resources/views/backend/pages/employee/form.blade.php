@@ -54,7 +54,7 @@
       </td>
 
       <td>
-                <a href="" class="btn btn-outline-primary">Update</a>
+                <a href="{{route('employee.edit',$data->id)}}" class="btn btn-outline-primary">Edit</a>
                 <a href="{{route('employee.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
                 <a href="{{route('employee.view',$data->id)}}" class="btn btn-outline-success">View</a>
       </td>

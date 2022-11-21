@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 
 
 use Illuminate\Support\Facades\Route;
+use League\Flysystem\UrlGeneration\PrefixPublicUrlGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,8 @@ Route::get('/employee/form',[EmployeeController::class,'formcreate'])->name('emp
 Route::post('/employee/form/store',[EmployeeController::class,'store'])->name('form.store');
 Route::get('/employee/delete/{employee_id}',[EmployeeController::class,'deleteEmployee'])->name('employee.delete');
 Route::get('/employe/view/{employee_id}',[EmployeeController::class,'viewEmployee'])->name('employee.view');
-
+Route::get('/employee/edit{employee_id}',[EmployeeController::class,'editEmployee'])->name('employee.edit');
+Route::put('/employee/update{employee_id}',[EmployeeController::class,'updateEmployee'])->name('employee.update');
 
 
 

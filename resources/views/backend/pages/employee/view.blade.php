@@ -49,7 +49,7 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
-  <h1>Mr.Jarry</h1>
+  <h1>Arfan Ahmed</h1>
   <p class="title">Manager</p>
   <p>Akaar IT</p>
   

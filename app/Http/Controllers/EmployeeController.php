@@ -77,7 +77,54 @@ class EmployeeController extends Controller
     
     public function viewEmployee($employee_id)
     {
-      $product=Employee::find($employee_id);
+      $employee=Employee::find($employee_id);
       return view('backend.pages.employee.view',compact('employee_id'));
     }
+
+
+
+    public function editEmployee($employee_id)
+    {
+
+     $employee=Employee::find($employee_id);
+
+     $employee_list=Employee::all();
+     return view('backend.pages.employee.edit',compact('employee','employee_list'));
+
+    }
+   
+
+    public function updateEmployee(Request $request,$employee_id)
+    {
+        $employee=Employee::find($employee_id);  
+
+      $employee->update([
+
+        'name'=>$request->user_name,
+        'email'=>$request->user_email,
+        'phone'=>$request->user_phone,
+        
+
+
+         ]);
+
+
+     return redirect()->route('employee.form')->with('message','Update success.');
+
+        
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
 }
+

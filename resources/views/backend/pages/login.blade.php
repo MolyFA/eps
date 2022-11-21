@@ -19,6 +19,11 @@
     <!-- Login Form -->
     <form action="{{route('do.login')}}" method="post">
        @csrf
+       
+
+
+
+
 
       <input type="text" id="login" class="fadeIn second" name="email" placeholder="Enter email">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Enter password">
