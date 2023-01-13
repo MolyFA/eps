@@ -14,7 +14,7 @@ class EmployeeController extends Controller
       
       //dd($employee_list);
 
-      $employee_list=Employee::paginate(5);
+      $employee_list=Employee::paginate(10);
        
 
         return view('backend.pages.employee.form',compact('employee_list'));
@@ -25,7 +25,7 @@ class EmployeeController extends Controller
     }
     public function store(Request $request)
     {
-    //dd($request->all());
+    
 
     $request->validate([
         'user_name'=>'required|unique:employees,name',
@@ -41,7 +41,6 @@ class EmployeeController extends Controller
      $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
      $request->file('image')->storeAs('/uploads',$fileName);
     }
-    //dd($fileName);
    
     
 
@@ -55,8 +54,10 @@ class EmployeeController extends Controller
         
         
        ]);
+       //dd($fileName); die;
 
-       return redirect()->back();
+
+       return redirect()->route('employee');
     }
 
     public function deleteEmployee(int $employee_id)
@@ -65,9 +66,9 @@ class EmployeeController extends Controller
              if($test)
              {
                  $test->delete();
-                 return redirect()->back()->with('message','product deleted successfully.');
+                 return redirect()->back()->with('message','employee deleted successfully.');
              }else{
-                 return redirect()->back()->with('error','product not found.');
+                 return redirect()->back()->with('error','employee not found.');
              }
 
     
@@ -112,17 +113,7 @@ class EmployeeController extends Controller
      return redirect()->route('employee.form')->with('message','Update success.');
 
         
-
-
-
-
- }
-
-
-
-
-
-
+}
 
 
 

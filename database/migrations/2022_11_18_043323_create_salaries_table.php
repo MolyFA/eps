@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
-            $table->string('basic_salary',50);
-            $table->string('house_rent',50);
-            $table->string('medical',50);
-            $table->string('transport',30);
-            $table->text('salary_rule',10);
+            $table->text('tittle');
+            $table->double('basic_salary',50);
+            $table->double('house_rent',50);
+            $table->double('medical',50);
+            $table->double('transport',30);
             $table->timestamps();
         });
     }

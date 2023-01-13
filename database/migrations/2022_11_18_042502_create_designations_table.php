@@ -16,11 +16,7 @@ return new class extends Migration
         Schema::create('designations', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->string('email',100);
-            $table->string('phone_number',10);
-            $table->text('address',);
-            $table->string('gender',10);
-            $table->string('age',5);
+            $table->text('status')->default('active');
             $table->timestamps();
         });
     }

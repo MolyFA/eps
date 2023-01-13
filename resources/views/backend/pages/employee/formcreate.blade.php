@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('form.store')}} " method="post">
+<form action="{{route('form.store')}} " method="post" enctype="multipart/form-data">
 @if($errors->any())
             @foreach($errors->all() as $message)
                 <p class="alert alert-danger">{{$message}}</p>

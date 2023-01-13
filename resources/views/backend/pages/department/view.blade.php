@@ -1,6 +1,8 @@
 @extends('backend.master')
 
 @section('content')
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,12 +47,12 @@ button:hover, a:hover {
 </head>
 <body>
 
-<h2 style="text-align:center">Employee Details</h2>
+<h2 style="text-align:center">Department Details</h2>
 
 <div class="card">
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
-  <h1>Mr.Z</h1>
-  <p class="title">Manager</p>
+  <h1>CSE</h1>
+  <p class="title">CSE Department</p>
   <p>JustDone</p>
   
   <p><button class="btn btn-success">Contact</button></p>
@@ -58,7 +60,6 @@ button:hover, a:hover {
 
 </body>
 </html>
-
 
 
 

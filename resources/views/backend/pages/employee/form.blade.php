@@ -14,7 +14,7 @@
 
 
 
-<a href="{{url('/employee/form')}}"   class="btn btn-success">Create Employee</a>
+<a href="{{route('employee.form')}}"   class="btn btn-success">Create Employee</a>
 
 
 
@@ -32,7 +32,7 @@
     </tr>
   </thead>
   <tbody>
-   
+    
   
   
   @foreach($employee_list as $data)
@@ -49,7 +49,7 @@
       
       <td>
                 
-                <img  width="100px" style="border-radius: 10px"src="{{url('/uploads/'.$data->image)}}"  alt="employee_image">
+                <img  width="50px" style="border-radius: 10px"src="{{url('/uploads/'.$data->image)}}"  alt="employee_image">
                 
       </td>
 
