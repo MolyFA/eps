@@ -10,4 +10,29 @@ class SalaryController extends Controller
     {
         return view('backend.pages.salary.form');
     }
+
+
+    public function formcreate()
+     {
+
+
+
+        
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

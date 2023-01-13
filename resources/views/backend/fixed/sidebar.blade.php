@@ -123,7 +123,7 @@
                   
                   
                   
-                   <a class="btn btn-success" href="{{route('logout')}}">Logout</a>
+                   <a class="btn btn-secondary" href="{{route('logout')}}">Logout</a>
                    
                </div>
         </div>
