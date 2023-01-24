@@ -23,6 +23,32 @@
   <tbody>
 
 
+  @foreach($salary_list as $data)
+
+  <tr>
+      <th scope="row">{{$data->id}}</th>
+      <td>{{$data->tittle}}</td>
+      <td>{{$data->basic_salary}}</td>
+      <td>{{$data->house_rent}}</td>
+      <td>{{$data->medical}}</td>
+      <td>{{$data->transport}}</td>
+
+
+      <td>
+                <a href="{{route('salary.edit',$data->id)}}" class="btn btn-outline-primary">Edit</a>
+                <a href="{{route('salary.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
+                <a href="{{route('salary.view',$data->id)}}" class="btn btn-outline-success">View</a>
+            </td>
+
+
+
+
+</tr>
+@endforeach
+  </tbody>
+</table>
+
+
 
 
 @endsection

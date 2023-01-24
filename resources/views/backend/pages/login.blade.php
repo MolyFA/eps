@@ -13,7 +13,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" id="icon" alt="User Icon" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY-W_0bbkoBLZ2OddOp9U2OpImyc9GT1q-xCbiP5QqfJ1wPc5Hor9N1jyzNLw5G838fz0&usqp=CAU" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->

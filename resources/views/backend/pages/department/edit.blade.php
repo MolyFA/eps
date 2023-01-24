@@ -26,11 +26,6 @@
 @csrf
 
 
-<div class="form-group">
-            <label for="id"><b>ID</b></label>
-            <input  type="text" class="form-control" id="id" name="user_id" placeholder="Enter Employee ID" value="{{$department->id}}" >
-        </div>
-
         <div class="form-group">
             <label for="name"><b>Name</b></label>
             <input type="string" class="form-control" id="name" name="user_name" placeholder="Enter Department name" value="{{$department->name}}">

@@ -38,10 +38,9 @@ class DesignationController extends Controller
 
 
         Designation::create([
-            'id'=>$request->user_id,
+           
             'name'=>$request->user_name,
-            'status'=>$request->status
-        
+    
         ]);
         
         
@@ -97,7 +96,7 @@ class DesignationController extends Controller
 
       $designation->update([
 
-        'id'=>$request->user_id,
+       
         'name'=>$request->user_name,
         'status'=>$request->status,
          ]);

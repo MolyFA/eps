@@ -26,6 +26,8 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
+      <th scope="col">Department</th>
+      <th scope="col">Salary</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
       <th scope="col"></th>
@@ -39,13 +41,13 @@
 
   
 
-
-
     <tr>
       <th scope="row">{{$data->id}}</th>
       <td>{{$data->name}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->phone}}</td>
+      <td>{{$data->EmployeeDepartment->name}}</td>
+      <td>{{$data->salary->basic_salary + $data->salary->house_rent + $data->salary->medical + $data->salary->transport}}</td>
       
       <td>
                 

@@ -28,7 +28,7 @@
 
   <tr>
       <th scope="row">{{$data->id}}</th>
-      <td>{{$data->department_name}}</td>
+      <td>{{$data->name}}</td>
       <td>{{$data->status}}</td>
 
 

@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('leave_applies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('employee_id')->constrained("employees");
+            $table->text('tittle');
+            $table->text('letter');
+            $table->text('leave');
             $table->timestamps();
         });
     }

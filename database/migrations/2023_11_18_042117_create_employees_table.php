@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name',50);
             $table->string('email',25)->nullable();
-            $table->string('phone',20)->nullable();
+            $table->string('phone',20)->nullable(); 
+            $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();
+            $table->foreignId('salary_id')->constrained("salaries");
             $table->string('image',20)->nullable();
             $table->timestamps();
         });

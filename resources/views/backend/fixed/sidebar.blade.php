@@ -30,14 +30,7 @@
             
                     
                    
-                
-
-                   
-                   
-                   
-                   
-                   
-                    <li>
+                <li>
                         <a class="has-arrow" href="{{route('employee')}}" aria-expanded="false">
                             <i class=""></i><span class="nav-text">Employee</span>
                         </a>
@@ -55,8 +48,6 @@
                   </li>
 
                   <li>
-                    
-                  <a>
                   <a class="has-arrow" href="{{route('salary')}}" aria-expanded="false">
                     <i class=""></i><span>Salary</span>
 
@@ -67,27 +58,23 @@
                    
                   <li>
                     
-                  <a>
+                  <a class="has-arrow" href="{{route('leave')}}"  aria-expanded="false">
 
                     <i class=""></i><span>Leave</span>
-
-
                   </a>
 
                   </li>
                   <li>
                     
-                  <a>
+                  <a class="has-arrow" href="{{route('leavetype')}}"  aria-expanded="false">
 
                     <i class=""></i><span>Leave Type</span>
-
-
                   </a>
 
                   </li>
                   <li>
                     
-                  <a>
+                  <a class="has-arrow" href="{{route('leaveapply')}}"  aria-expanded="false">
 
                     <i class=""></i><span>Leave Apply</span>
 
@@ -97,7 +84,7 @@
                   </li>
                   <li>
                     
-                  <a>
+                  <a class="has-arrow" href="{{route('attendance')}}"  aria-expanded="false">
 
                     <i class=""></i><span>Attendance</span>
 
@@ -107,16 +94,27 @@
                   </li>
                   <li>
                     
-                  <a>
+                  <a  class="has-arrow" href="{{route('payment')}}"  aria-expanded="false">
 
-                    <i class=""></i><span>Payments</span>
+                    <i class=""></i><span>Payment</span>
 
 
                   </a>
 
                   </li>
 
-                   
+
+
+                  <li>
+
+                  <a class="has-arrow"  href="{{route('report')}}"   aria-expanded="false">
+
+                  <i class=""></i><span>Report generate</span>
+
+                  
+                   </a>
+
+                  </li>
                    
                   
                   

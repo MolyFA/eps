@@ -21,6 +21,7 @@
 
 
 
+
 <div class="form-group">
             <label for="name"><b>Name</b></label>
             <input required type="text" class="form-control" id="name" name="user_name" placeholder="Enter Employee Name">
@@ -37,10 +38,33 @@
             <input type="string" class="form-control" id="number" name="user_phone" placeholder="Enter Employee Phone number">
         </div>
 
+        <div class="form-group">
+            <label for=""><b>Select Department</b></label>
+            <select id="department_id" name="department_id" class="form-control">
+                @foreach($department as $item)
+            <option id="department_id" name="department_id" value="{{$item->id}}">{{$item->name }}</option>
+            @endforeach
+        </select>
+        </div>
         
         
 
+
+
+
         <div class="form-group">
+            <label for=""><b>Select Salary</b></label>
+            <select name="salary" id="" class="form-control">
+                @foreach($salary as $item)
+            <option value="{{$item->id}}">{{$item->tittle }}</option>
+            @endforeach
+
+        </select>
+        </div>
+
+
+
+    <div class="form-group">
             <label for="image">Upload Image</label>
             <input name="image" type="file" class="form-control" id="image">
         </div>

@@ -34,10 +34,7 @@ public function store(Request $request)
   //dd($request->all());
 
   Department::create([
-    'id'=>$request->user_id,
-    'department_name'=>$request->user_name,
-    'status'=>$request->status,
-
+    'name'=>$request->name
 ]);
 
 
@@ -89,14 +86,12 @@ public function deleteDepartment(int $department_id)
         $department=Department::find($department_id);  
 
       $department->update([
-
-        'id'=>$request->user_id,
-        'department_name'=>$request->user_name,
+        'name'=>$request->user_name,
         'status'=>$request->status,
          ]);
 
 
-     return redirect()->route('department.form')->with('message','Update success.');
+         return redirect()->route('department')->with('message','Update success.');
 
         
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Department;
+use App\Models\Salary;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -14,22 +16,26 @@ class EmployeeController extends Controller
       
       //dd($employee_list);
 
-      $employee_list=Employee::paginate(10);
+      $employee_list=Employee::with('EmployeeDepartment')->paginate(10);
        
 
         return view('backend.pages.employee.form',compact('employee_list'));
     }
     public function formcreate()
     {
-        return view('backend.pages.employee.formcreate');
+
+      
+      $department = Department::all();
+      // dd($department);
+      $salary = Salary::all();
+        return view('backend.pages.employee.formcreate',compact('salary','department'));
     }
     public function store(Request $request)
     {
     
-
+// dd($request->all());
     $request->validate([
-        'user_name'=>'required|unique:employees,name',
-        
+        'user_name'=>'required|unique:employees,name',   
     ]);
 
        
@@ -50,6 +56,8 @@ class EmployeeController extends Controller
         'name'=>$request->user_name,
         'email'=>$request->user_email,
         'phone'=>$request->user_phone,
+        'department_id'=>$request->department_id,
+        'salary_id'=>$request->salary,
         'image'=>$fileName,
         
         
