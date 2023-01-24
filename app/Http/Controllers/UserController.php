@@ -17,15 +17,11 @@ class UserController extends Controller
     {
        $credentials=$request->except('_token');
 
-        //dd($credentials);
-
 
      if (Auth::attempt($credentials))
      {
         return redirect()->route('dashboard');
      }
-     dd('login failed');
-
     }
 
     public function logout()
