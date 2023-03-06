@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\LeaveApply;
+use App\Models\LeaveType;
 use Illuminate\Http\Request;
 
 class LeaveApplyController extends Controller
 {
     public function start()
     {
-        $leaveapply_list=LeaveApply::all();
+        $leaveapply_list = LeaveApply::with('leavetype')->get();
+        // dd($leaveapply_list);
         //check for relationship
         // dd($leaveapply_list[0]->employee->name);
-        return view('backend.pages.leaveapply.form',compact('leaveapply_list'));
+        return view('backend.pages.leaveapply.form', compact('leaveapply_list'));
     }
 
 
@@ -21,10 +23,9 @@ class LeaveApplyController extends Controller
     {
 
         $employee = Employee::all();
-       
-        return view('backend.pages.leaveapply.formcreate',compact('employee'));
+        $leavetype_list = LeaveType::all();
 
-
+        return view('backend.pages.leaveapply.formcreate', compact('employee', "leavetype_list"));
     }
 
     public function store(Request $request)
@@ -35,107 +36,59 @@ class LeaveApplyController extends Controller
         //dd($request->all());
 
         LeaveApply::create([
-            'employee_id'=>$request->employee,
-            'tittle'=>$request->leaveapply_tittle,
-            'letter'=>$request->leaveapply_letter,
-            'leave'=>$request->leave,
-            
-            
-            
-        
+            'employee_id' => $request->employee,
+            'date' => $request->leaveapply_date,
+            'tittle' => $request->leaveapply_tittle,
+            'letter' => $request->leaveapply_letter,
+            'leavetype_id' => $request->leavetype_id,
+
         ]);
-        
-        
+
+
         return redirect()->route('leaveapply');
-
-
-
-
     }
 
 
 
-    public function deleteLeaveApply(int $leaveapply_id)
+    public function approve(int $leaveapply_id)
     {
-           $test=LeaveApply::find($leaveapply_id);
-             if($test)
-             {
-                 $test->delete();
-                 return redirect()->back()->with('message','leaveapply deleted successfully.');
-             }else{
-                 return redirect()->back()->with('error','leaveapply not found.');
-             }
-
-    
-    }
-
-
-    public function viewLeaveApply($leaveapply_id)
-    {
-      $LeaveApply=LeaveApply::find($leaveapply_id);
-      return view('backend.pages.leaveapply.view',compact('leaveapply_id'));
-    }
-
-
-
-    public function editLeaveApply($leaveapply_id)
-    {
-
-     $leaveapply=LeaveApply::find($leaveapply_id);
-
-     $leaveapply_list=LeaveApply::all();
-     return view('backend.pages.leaveapply.edit',compact('leaveapply','leaveapply_list'));
-
-    
+        $test = LeaveApply::find($leaveapply_id);
+        if ($test) {
+            $test->update([
+                "status" => "approved"
+            ]);
+            notify()->success("Leave Approved");
+            return redirect()->back();
+        } else {
+            notify()->error("Something went worng");
+            return redirect()->back();
+        }
     }
 
 
 
 
 
-    public function updateLeaveApply(Request $request,$leaveapply_id)
+
+    public function reject( int $leaveapply_id)
     {
-        $leaveapply=LeaveApply::find($leaveapply_id);  
-
-      $leaveapply->update([
-
         
-            'tittle'=>$request->leaveapply_tittle,
-            'letter'=>$request->leaveapply_letter,
-            'leave'=>$request->leave,
-            
-            
-         ]);
-
-
-     return redirect()->route('leaveapply.form')->with('message','Update success.');
-
+        $test = LeaveApply::find($leaveapply_id);
+        if ($test) {
+            $test->update([
+                "status" => "rejected"
+            ]);
+            notify()->success("Rejected");
+            return redirect()->back();
+        } else {
+            notify()->error("Something went worng");
+            return redirect()->back();
+        }
         
-}
+        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }

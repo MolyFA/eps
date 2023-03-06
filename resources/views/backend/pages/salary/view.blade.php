@@ -51,11 +51,17 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
-  <h1>Mr.X</h1>
-  <p class="title">Employee</p>
-  <p>JustDone</p>
   
-  <p><button class="btn btn-success">Contact</button></p>
+
+  
+  <p class="title">{{$salary->tittle}}</p>
+  <p>{{$salary->basic_salary}}</p>
+  <p>{{$salary->house_rent}}</p>
+  <p>{{$salary->medical}}</p>
+  <p>{{$salary->transport}}</p>
+  
+  <p><button class="btn btn-success"></button></p>
+
 </div>
 
 </body>

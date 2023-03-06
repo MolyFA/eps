@@ -47,7 +47,16 @@
         </select>
         </div>
         
-        
+        <div class="form-group">
+            <label for=""><b>Select Role</b></label>
+            <select name="role" id="" class="form-control">
+                @foreach($role as $item)
+            <option value="{{$item->id}}">{{$item->name }}</option>
+            @endforeach
+
+        </select>
+        </div>
+
 
 
 
@@ -61,6 +70,10 @@
 
         </select>
         </div>
+        <div class="form-group">
+               <label for="password">User Password</label>
+               <input type="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter User Password" name="userPass" required autocomplete="off">
+          </div>
 
 
 

@@ -77,7 +77,7 @@ class SalaryController extends Controller
     public function viewSalary($salary_id)
     {
       $salary=Salary::find($salary_id);
-      return view('backend.pages.salary.view',compact('salary_id'));
+      return view('backend.pages.salary.view',compact('salary'));
     }
 
 

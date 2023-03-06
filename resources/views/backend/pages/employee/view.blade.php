@@ -49,11 +49,15 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
-  <h1>Mr.Z</h1>
-  <p class="title">Manager</p>
-  <p>JustDone</p>
   
-  <p><button class="btn btn-success">Contact</button></p>
+
+
+  <p class="title">{{$employee->user->name}}</p>
+  <p>{{$employee->phone}}</p>
+  <h2>{{$employee->department->name}}</h2>
+  <h2>{{$employee->salary->basic_salary+$employee->salary->house_rent+$employee->salary->medical+$employee->salary->transport}}</h2>
+  <p><button class="btn btn-success"></button></p>
+  
 </div>
 
 </body>

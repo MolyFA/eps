@@ -10,8 +10,8 @@ class Attendance extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function EmployeeAttendance(){
-        return $this->belongsTo(Attendance::class,'employee_id','id');
+    public function user(){
+        return $this->belongsTo(User::class,"employee_id", "id");
     }
 
 

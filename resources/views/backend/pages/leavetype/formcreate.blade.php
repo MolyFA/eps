@@ -10,7 +10,7 @@
 
 <div class="form-group">
             <label for="tittle"><b>Tittle</b></label>
-            <input required type="text" class="form-control" id="tittle" name="tittle" placeholder="Enter employee tittle">
+            <input required type="text" class="form-control" id="tittle" name="tittle" placeholder="Enter  tittle">
 </div>
 
 

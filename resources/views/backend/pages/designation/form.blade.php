@@ -4,6 +4,8 @@
 
 <h1>Designation List</h1>
 
+
+
 <a href="{{route('designation.form')}}"   class="btn btn-success">Create Designation</a>
 
 

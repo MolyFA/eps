@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('leave_applies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id')->constrained("employees");
-            $table->text('tittle');
-            $table->text('letter');
-            $table->text('leave');
+            $table->date('date');
+            $table->string('tittle');
+            $table->string('letter');
+            $table->string("status")->default("pending");
+            $table->foreignId('leavetype_id')->constrained("leave_types");
             $table->timestamps();
         });
     }

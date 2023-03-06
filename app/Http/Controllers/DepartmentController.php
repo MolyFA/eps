@@ -62,7 +62,8 @@ public function deleteDepartment(int $department_id)
     public function viewDepartment($department_id)
     {
       $department=Department::find($department_id);
-      return view('backend.pages.department.view',compact('department_id'));
+      return view('backend.pages.department.view',compact('department'));
+      
     }
 
 
@@ -84,9 +85,10 @@ public function deleteDepartment(int $department_id)
     public function updateDepartment(Request $request,$department_id)
     {
         $department=Department::find($department_id);  
+        
 
       $department->update([
-        'name'=>$request->user_name,
+        'name'=>$request->name,
         'status'=>$request->status,
          ]);
 

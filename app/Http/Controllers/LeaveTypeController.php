@@ -65,7 +65,7 @@ class LeaveTypeController extends Controller
     public function viewLeaveType($leavetype_id)
     {
       $LeaveType=LeaveType::find($leavetype_id);
-      return view('backend.pages.leavetype.view',compact('leavetype_id'));
+      return view('backend.pages.leavetype.view',compact('LeaveType'));
     }
 
 
@@ -99,15 +99,6 @@ class LeaveTypeController extends Controller
 
         
 }
-
-
-
-
-
-
-
-
-
 
 
 

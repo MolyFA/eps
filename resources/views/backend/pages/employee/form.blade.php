@@ -3,6 +3,7 @@
 @section('content')
 
 <h1>Employee List</h1>
+
 @if(session()->has('message'))
         <p class="alert alert-success">{{session()->get('message')}}</p>
       @endif
@@ -12,11 +13,10 @@
     @endif
 
 
-
+@if(auth()->user()->role->name != "Employee")
 
 <a href="{{route('employee.form')}}"   class="btn btn-success">Create Employee</a>
-
-
+@endif
 
 
 <table class="table">
@@ -27,6 +27,7 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Department</th>
+      <th scope="col">Role </th>
       <th scope="col">Salary</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
@@ -36,17 +37,17 @@
   <tbody>
     
   
-  
-  @foreach($employee_list as $data)
+ 
+  @foreach($employee_list as $key=>$data)
 
-  
 
     <tr>
       <th scope="row">{{$data->id}}</th>
-      <td>{{$data->name}}</td>
-      <td>{{$data->email}}</td>
+      <td>{{$data->user?->name}}</td>
+      <td>{{$data->user?->email}}</td>
       <td>{{$data->phone}}</td>
-      <td>{{$data->EmployeeDepartment->name}}</td>
+      <td>{{$data->department->name}}</td>
+      <td>{{$data->user?->role?->name}}</td>
       <td>{{$data->salary->basic_salary + $data->salary->house_rent + $data->salary->medical + $data->salary->transport}}</td>
       
       <td>

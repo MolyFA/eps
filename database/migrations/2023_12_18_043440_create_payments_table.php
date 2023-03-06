@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leaves', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
+            $table->foreignId('employee_id')->constrained("employees");
             $table->date('date');
-            $table->text('details');
-            $table->text('leave_type',);
+            $table->double('deduction_salary');
+            $table->double('bonus');
+            $table->double('total_amount');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leaves');
+        Schema::dropIfExists('payments');
     }
 };

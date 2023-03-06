@@ -51,12 +51,12 @@ button:hover, a:hover {
 
 <div class="card">
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
-  <h1>CSE</h1>
-  <p class="title">CSE Department</p>
-  <p>JustDone</p>
-  
-  <p><button class="btn btn-success">Contact</button></p>
+
+  <p class="title">{{$department->name}}</p>
+  <p>{{$department->status}}</p>
+  <p><button class="btn btn-success"></button></p>
 </div>
+
 
 </body>
 </html>

@@ -73,7 +73,7 @@ class DesignationController extends Controller
     public function viewDesignation($designation_id)
     {
       $designation=Designation::find($designation_id);
-      return view('backend.pages.designation.view',compact('designation_id'));
+      return view('backend.pages.designation.view',compact('designation'));
     }
 
 
@@ -107,12 +107,6 @@ class DesignationController extends Controller
         
 }
    
-
-
-
-
-
-
 
 
 

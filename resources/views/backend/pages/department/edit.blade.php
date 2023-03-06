@@ -20,15 +20,12 @@
             @endif
 
 
-
-
-
 @csrf
 
 
         <div class="form-group">
             <label for="name"><b>Name</b></label>
-            <input type="string" class="form-control" id="name" name="user_name" placeholder="Enter Department name" value="{{$department->name}}">
+            <input type="string" class="form-control" id="name" name="name" placeholder="Enter Department name" value="{{$department->name}}">
         </div>
         <div class="form-group">
             <label for=""><b>Select Status</b></label>

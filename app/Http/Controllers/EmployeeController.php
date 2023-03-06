@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Department;
+use App\Models\Role;
 use App\Models\Salary;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -15,27 +17,35 @@ class EmployeeController extends Controller
       //$employee_list=Employee::all();
       
       //dd($employee_list);
+   
 
-      $employee_list=Employee::with('EmployeeDepartment')->paginate(10);
-       
-
-        return view('backend.pages.employee.form',compact('employee_list'));
+      $employee_list=Employee::with('department')->with("user")->paginate(5);
+      
+      return view('backend.pages.employee.form',compact('employee_list'));
     }
+
+
+    
     public function formcreate()
     {
 
       
       $department = Department::all();
+      $role = Role::all();
+      //dd($role);
       // dd($department);
       $salary = Salary::all();
-        return view('backend.pages.employee.formcreate',compact('salary','department'));
+        return view('backend.pages.employee.formcreate',compact('salary','department','role'));
     }
+
+
     public function store(Request $request)
     {
     
 // dd($request->all());
     $request->validate([
-        'user_name'=>'required|unique:employees,name',   
+        'user_name'=>'required',   
+        'user_email'=>'required|unique:users,email',   
     ]);
 
        
@@ -49,14 +59,22 @@ class EmployeeController extends Controller
     }
    
     
+      // dd($request->all());
 
+      $user = User::create([
 
-
-        Employee::create([
         'name'=>$request->user_name,
         'email'=>$request->user_email,
-        'phone'=>$request->user_phone,
+        
+        "password" =>bcrypt($request->userPass),
+        'role_id'=>$request->role,
+      ]);
+
+        Employee::create([
+
+        "user_id" =>$user->id,
         'department_id'=>$request->department_id,
+        'phone'=>$request->user_phone,
         'salary_id'=>$request->salary,
         'image'=>$fileName,
         
@@ -68,7 +86,7 @@ class EmployeeController extends Controller
        return redirect()->route('employee');
     }
 
-    public function deleteEmployee(int $employee_id)
+    public function deleteEmployee($employee_id)
     {
            $test=Employee::find($employee_id);
              if($test)
@@ -87,7 +105,8 @@ class EmployeeController extends Controller
     public function viewEmployee($employee_id)
     {
       $employee=Employee::find($employee_id);
-      return view('backend.pages.employee.view',compact('employee_id'));
+      // dd($employee);
+      return view('backend.pages.employee.view',compact('employee'));
     }
 
 

@@ -1,12 +1,42 @@
 <!--**********************************
-Header start
+              Nav Header Start
         ***********************************-->
+
+
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="">
+                    
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title" ><img src="images/logo.png" alt="" >
+                    <h1 > <b>Employee Payroll </b></h1>
+                        
+                       
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!--**********************************
+                     Nav Header End
+        ***********************************-->
+
+
+
+        <!--**********************************
+                   Header Start
+        ***********************************-->
+
+
         <div class="header">    
+           
             <div class="header-content clearfix">
-                
                 <div class="nav-control">
-                    <div class="hamburger">
+                  <div class="hamburger">
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
+                        
+                        
                     </div>
                 </div>
                 <div class="header-left">
@@ -23,67 +53,35 @@ Header start
                     </div>
                 </div>
                 
-
-
-
-
-                <div class="header-right">
+              <div class="header-right">
                     <ul class="clearfix">
-                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
-                               
+                    
+                    
+                    <li class="icons dropdown">
+                            <span>{{auth()->user()->role->name}}</span> |
+                             
+                     </li>
+                        
 
-                               
-                            </a>
-                            <div class="drop-down animated fadeIn dropdown-menu">
-                                <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">3 New Messages</span>  
-                                    <a href="javascript:void()" class="d-inline-block">
-                                        <span class="badge badge-pill gradient-1">3</span>
-                                    </a>
-                                </div>
-                               
-
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        <li class="icons dropdown d-none d-md-flex">
-                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
-                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
-                            </a>
-                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
-                                <div class="dropdown-content-body">
-
-                                </div>
-                            </div>
+                    
+                       
                         </li>
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img src="https://cdn.vectorstock.com/i/preview-1x/52/84/logout-icon-in-trendy-glyph-style-isolated-vector-41395284.webp \" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                 <div class="dropdown-content-body">
 
-                                <ul>
-
-
-                                        
-                 <hr class="my-2">
-                    <li>
-                      <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                     </li>
-                 <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
-
-
+                  
+                  <ul>
+                    <hr class="my-2">
+                  
+                       
+                    <li><a href="{{route('logout')}}"><i class="icon-key"></i> <span>Logout</span></a></li>
                   </ul>
-             <div class="nav-item text-nowrap">
-                   <a class="nav-link px-3" href="#">Sign out</a>
-                   
-                    </div>
+             
                     
 
                                 
@@ -93,6 +91,8 @@ Header start
                 </div>
             </div>
         </div>
+       
+
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
