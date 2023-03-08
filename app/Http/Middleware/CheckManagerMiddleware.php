@@ -16,7 +16,7 @@ class CheckManagerMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role->name ==  "Manager"){
+        if(auth()->user()->role->name ==  "manager" || auth()->user()->role->name == "admin"){
         return $next($request);
         }
         notify()->error("You Are Not Authorized");

@@ -50,17 +50,20 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard');
 
 
 
+Route::get('/employee',[EmployeeController::class,'field'])->name('employee');
+Route::get('/employe/view/{employee_id}',[EmployeeController::class,'viewEmployee'])->name('employee.view');
+
+
 Route::group(["middleware"=>["checkAdmin"]],function(){
 
-Route::get('/employee',[EmployeeController::class,'field'])->name('employee');
 Route::get('/employee/form',[EmployeeController::class,'formcreate'])->name('employee.form');
 Route::post('/employee/form/store',[EmployeeController::class,'store'])->name('form.store');
 Route::get('/employee/delete/{employee_id}',[EmployeeController::class,'deleteEmployee'])->name('employee.delete');
-Route::get('/employe/view/{employee_id}',[EmployeeController::class,'viewEmployee'])->name('employee.view');
+
 Route::get('/employee/edit{employee_id}',[EmployeeController::class,'editEmployee'])->name('employee.edit');
 Route::put('/employee/update{employee_id}',[EmployeeController::class,'updateEmployee'])->name('employee.update');
     
-Route::get('/department',[DepartmentController::class,'start'])->name('department');
+
 Route::get('/department/form',[DepartmentController::class,'formcreate'])->name('department.form');
 Route::post('/department/form/store',[DepartmentController::class,'store'])->name('department.form.store');
 Route::get('/department/delete/{department_id}',[DepartmentController::class,'deleteDepartment'])->name('department.delete');
@@ -92,7 +95,6 @@ Route::get('/leavetype/edit/{leavetype_id}',[LeaveTypeController::class,'editlea
 Route::put('/leavetype/update{leavetype_id}',[LeaveTypeController::class,'updateleavetype'])->name('leavetype.update');
 
 
-Route::get("/role", [RoleController::class,"start"])->name("role.list");
 Route::get("/role/create", [RoleController::class,"create"])->name("role.create");
 Route::post("/role/store", [RoleController::class,"store"])->name("role.store");
 Route::get('/role/delete/{role_id}',[RoleController::class,'deleteRole'])->name('role.delete');
@@ -102,12 +104,9 @@ Route::put('/role/update{role_id}',[RoleController::class,'updateRole'])->name('
 
 
 });
-Route::group(["middleware"=>["checkAdmin","checkManageer"]],function(){
-
-
-
-
-
+Route::group(["middleware"=>["checkManager"]],function(){
+     Route::get("/role", [RoleController::class,"start"])->name("role.list");
+     Route::get('/department',[DepartmentController::class,'start'])->name('department');
 });
 
 

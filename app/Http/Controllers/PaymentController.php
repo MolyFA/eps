@@ -41,9 +41,17 @@ class PaymentController extends Controller
 
         
       $employee_list=Employee::with('department')->get();
-    //   dd($employee_list);
 
-          $payment_list=Payment::all();    
+          $payment_list = null;
+        
+          if(auth()->user()->role->name == "manager" || auth()->user()->role->name == "admin"){
+                $payment_list=Payment::all();
+            }
+            else{
+            $employee = Employee::where("user_id",auth()->user()->id)->select("id")->first();
+            $payment_list=Payment::where("employee_id",$employee->id)->get();
+        }
+
         return view('backend.pages.payment.list', compact("totalPresent","employee_list","payment_list"));
     }
 

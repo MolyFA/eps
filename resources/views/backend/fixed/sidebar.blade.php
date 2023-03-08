@@ -21,7 +21,7 @@
        </li>
 
 
-      
+      @if(auth()->user()->role == 'admin' || auth()->user()->role == 'manager')
        <li class="mega-menu mega-menu-sm">
 
          <a class="" href="{{route('department')}}" aria-expanded="false">
@@ -31,7 +31,7 @@
            </a>
          </li>
         
-
+@endif
 
 
 
