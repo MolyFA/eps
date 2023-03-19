@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
+use App\Models\Designation;
+use App\Models\Employee;
 use App\Models\Salary;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SalaryController extends Controller
@@ -23,8 +27,14 @@ class SalaryController extends Controller
     public function formcreate()
      {
 
- 
-        return view('backend.pages.salary.formcreate');
+
+        
+        $department = Department::all();
+        $designation = Designation::all();
+       
+        //dd($department);
+        //dd($designation);
+        return view('backend.pages.salary.formcreate',compact('department','designation'));
 
 
      }
@@ -38,7 +48,8 @@ class SalaryController extends Controller
        // dd($request->all());
 
         Salary::create([
-            'tittle'=>$request->tittle,
+            'department_id'=>$request->department,
+            'designation_id'=>$request->designation,
             'basic_salary'=>$request->basic_salary,
             'house_rent'=>$request->house_rent,
             'medical'=>$request->medical,
@@ -111,7 +122,7 @@ class SalaryController extends Controller
         ]);
 
 
-     return redirect()->route('salary.form')->with('message','Update success.');
+     return redirect()->route('salary')->with('message','Update success.');
 
         
 }

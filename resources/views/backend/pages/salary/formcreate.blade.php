@@ -8,11 +8,27 @@
 
 
 
-
-<div class="form-group">
-            <label for="tittle"><b>Tittle</b></label>
-            <input required type="text" class="form-control" id="tittle" name="tittle" placeholder="Enter employee tittle">
+<div class="from-group">
+   <label for=""><b>Select Department</b></label>
+   <select name="department" id="" class="form-control">
+     @foreach($department as $item)
+     <option value="{{$item->id}}">{{$item->name}}</option>
+     @endforeach
+   </select>
 </div>
+
+<div class="from-group">
+     <label for=""><b>Select Designation</b></label>
+     <select name="designation" id="" class= "form-control"> 
+          @foreach($designation as $item)
+          <option value="{{$item->id}}">{{$item->name}}</option>
+          @endforeach
+     </select>
+</div>
+
+
+
+
 
 <div class="form-group">
             <label for="basic salary"><b>Basic Salary</b></label>
@@ -20,17 +36,17 @@
 </div>
 
 <div class="form-group">
-            <label for="house rent"><b>House Rent</b></label>
+            <label for="house rent"><b>House Rent (%)</b></label>
             <input required type="number" class="form-control" id="house rent" name="house_rent" placeholder="Enter employee house rent">
 </div>
 
 <div class="form-group">
-            <label for="medical"><b>Medical</b></label>
+            <label for="medical"><b>Medical (%)</b></label>
             <input required type="number" class="form-control" id="medical" name="medical" placeholder="Enter employee medical">
 </div>
 
 <div class="form-group">
-            <label for="transport"><b>Transport</b></label>
+            <label for="transport"><b>Transport (%)</b></label>
             <input required type="number" class="form-control" id="transport" name="transport" placeholder="Enter employee transport">
 </div>
 

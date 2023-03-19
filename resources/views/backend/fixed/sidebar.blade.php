@@ -14,14 +14,17 @@
 
 
 
+       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
        <li class="mega-menu mega-menu-sm">
          <a class="" href="{{route('dashboard')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span class=" ">Dashboard</span>
          </a>
        </li>
+       @endif
 
 
-      @if(auth()->user()->role == 'admin' || auth()->user()->role == 'manager')
+
+       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
        <li class="mega-menu mega-menu-sm">
 
          <a class="" href="{{route('department')}}" aria-expanded="false">
@@ -30,27 +33,30 @@
 
            </a>
          </li>
-        
-@endif
+        @endif
 
 
 
+
+        @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
        <li>
          <a class="" href="{{route('employee')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span class="nav-text">Employee</span>
          </a>
        </li>
 
+       @endif
+
+
+       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
        <li>
-
-
          <a class="" href="{{route('designation')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Designation</span>
-
-
          </a>
-
        </li>
+       @endif
+
+
 
        <li>
          <a class="" href="{{route('salary')}}" aria-expanded="false">
@@ -62,16 +68,18 @@
        </li>
 
 
+       @if(auth()->user()->role->name == 'admin' )
        <li>
-
          <a class="" href="{{route('leavetype')}}" aria-expanded="false">
 
            <i class="icon-grid menu-icon"></i><span>Leave Type</span>
          </a>
-
        </li>
+       @endif
+      
+      
+      
        <li>
-
          <a class="" href="{{route('leaveapply')}}" aria-expanded="false">
 
            <i class="icon-grid menu-icon"></i><span>Leave Apply</span>
@@ -95,44 +103,39 @@
          <a class="" href="{{route('payment')}}" aria-expanded="false">
 
            <i class="icon-grid menu-icon"></i><span>Payment</span>
-
-
          </a>
-
-       </li>
-
+        </li>
 
 
+        @if(auth()->user()->role->name == 'admin')
        <li>
-
-         <a class="" href="{{route('report')}}" aria-expanded="false">
-
-           <i class="icon-grid menu-icon"></i><span>Report generate</span>
-
-
-         </a>
-
-       </li>
-       <li>
-
          <a class="" href="{{route('user.list')}}" aria-expanded="false">
 
            <i class="icon-grid menu-icon"></i><span>User</span>
-
-
          </a>
-
        </li>
-       <li>
+       @endif
 
-         <a class="" href="{{route('role.list')}}" aria-expanded="false">
+
+       @if(auth()->user()->role->name == 'admin')
+       <li>
+        <a class="" href="{{route('role.list')}}" aria-expanded="false">
 
            <i class="icon-grid menu-icon"></i><span>Role</span>
+       </a>
+      </li>
+      @endif
 
+       
 
+      @if(auth()->user()->role->name == 'admin' )
+      <li>
+          <a class="" href="{{route('report')}}" aria-expanded="false">
+
+           <i class="icon-grid menu-icon"></i><span>Report generate</span>
          </a>
-
-       </li>
+      </li>
+      @endif
 
 
 

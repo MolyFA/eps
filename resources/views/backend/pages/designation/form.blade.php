@@ -13,6 +13,7 @@
   <thead>
     <tr>
     <th scope="col">ID</th>
+      <th scope="col">Department</th>
       <th scope="col">Name</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
@@ -26,6 +27,7 @@
 
   <tr>
       <th scope="row">{{$data->id}}</th>
+      <th>{{$data->department->name}}</th>
       <td>{{$data->name}}</td>
       <td>{{$data->status}}</td>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Department;
+use App\Models\Designation;
 use App\Models\Role;
 use App\Models\Salary;
 use App\Models\User;
@@ -20,6 +21,10 @@ class EmployeeController extends Controller
    
 
       $employee_list=Employee::with('department')->with("user")->paginate(5);
+
+      
+      
+       
       
       return view('backend.pages.employee.form',compact('employee_list'));
     }
@@ -32,10 +37,13 @@ class EmployeeController extends Controller
       
       $department = Department::all();
       $role = Role::all();
+      $designation = Designation::all();
       //dd($role);
       // dd($department);
+      //dd($designation);
+
       $salary = Salary::all();
-        return view('backend.pages.employee.formcreate',compact('salary','department','role'));
+        return view('backend.pages.employee.formcreate',compact('salary','department','role','designation'));
     }
 
 
@@ -74,6 +82,7 @@ class EmployeeController extends Controller
 
         "user_id" =>$user->id,
         'department_id'=>$request->department_id,
+        'designation_id'=>$request->designation,
         'phone'=>$request->user_phone,
         'salary_id'=>$request->salary,
         'image'=>$fileName,

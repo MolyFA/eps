@@ -46,7 +46,18 @@
             @endforeach
         </select>
         </div>
+
+       <div class="form-group">
+        <label for=""><b>Select Designation</b></label>
+        <select name="designation" id="" class="form-control">
+            @foreach($designation as $item)
+            <option value="{{$item->id}}">{{$item->name}}</option>
+             @endforeach
+        </select>
         
+       </div>
+        
+
         <div class="form-group">
             <label for=""><b>Select Role</b></label>
             <select name="role" id="" class="form-control">

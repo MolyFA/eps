@@ -50,7 +50,7 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard');
 
 
 
-Route::get('/employee',[EmployeeController::class,'field'])->name('employee');
+
 Route::get('/employe/view/{employee_id}',[EmployeeController::class,'viewEmployee'])->name('employee.view');
 
 
@@ -62,7 +62,9 @@ Route::get('/employee/delete/{employee_id}',[EmployeeController::class,'deleteEm
 
 Route::get('/employee/edit{employee_id}',[EmployeeController::class,'editEmployee'])->name('employee.edit');
 Route::put('/employee/update{employee_id}',[EmployeeController::class,'updateEmployee'])->name('employee.update');
-    
+
+
+
 
 Route::get('/department/form',[DepartmentController::class,'formcreate'])->name('department.form');
 Route::post('/department/form/store',[DepartmentController::class,'store'])->name('department.form.store');
@@ -71,13 +73,29 @@ Route::get('/department/view/{department_id}',[DepartmentController::class,'view
 Route::get('/department/edit/{department_id}',[DepartmentController::class,'editDepartment'])->name('department.edit');
 Route::put('/department/update{department_id}',[DepartmentController::class,'updateDepartment'])->name('department.update');
 
-Route::get('/designation',[DesignationController::class,'startOne'])->name('designation');
+
 Route::get('/designation/form',[DesignationController::class,'formcreate'])->name('designation.form');
 Route::post('/designation/form/store',[DesignationController::class,'store'])->name('designation.form.store');
 Route::get('/designation/delete/{designation_id}',[DesignationController::class,'deleteDesignation'])->name('designation.delete');
 Route::get('/designation/view/{designation_id}',[DesignationController::class,'viewDesignation'])->name('designation.view');
 Route::get('/designation/edit/{designation_id}',[DesignationController::class,'editDesignation'])->name('designation.edit');
 Route::put('/designation/update{designation_id}',[DesignationController::class,'updateDesignation'])->name('designation.update');
+
+
+Route::get('/salary/form',[SalaryController::class,'formcreate'])->name('salary.form');
+Route::post('/salary/form/store',[SalaryController::class,'store'])->name('salary.form.store');
+Route::get('/salary/delete/{salary_id}',[SalaryController::class,'deleteSalary'])->name('salary.delete');
+Route::get('/salary/view/{salary_id}',[SalaryController::class,'viewSalary'])->name('salary.view');
+Route::get('/salary/edit/{salary_id}',[SalaryController::class,'editSalary'])->name('salary.edit');
+Route::put('/salary/update{salary_id}',[SalaryController::class,'updateSalary'])->name('salary.update');
+
+
+Route::get('/leaveapply/form',[LeaveApplyController::class,'formcreate'])->name('leaveapply.form');
+Route::post('/leaveapply/form/store',[LeaveApplyController::class,'store'])->name('leaveapply.form.store');
+
+
+
+
 
 Route::get("/user", [UserController::class,"start"])->name("user.list");
 Route::get("/user/create", [UserController::class,"create"])->name("user.create");
@@ -95,6 +113,7 @@ Route::get('/leavetype/edit/{leavetype_id}',[LeaveTypeController::class,'editlea
 Route::put('/leavetype/update{leavetype_id}',[LeaveTypeController::class,'updateleavetype'])->name('leavetype.update');
 
 
+Route::get("/role", [RoleController::class,"start"])->name("role.list");
 Route::get("/role/create", [RoleController::class,"create"])->name("role.create");
 Route::post("/role/store", [RoleController::class,"store"])->name("role.store");
 Route::get('/role/delete/{role_id}',[RoleController::class,'deleteRole'])->name('role.delete');
@@ -104,25 +123,18 @@ Route::put('/role/update{role_id}',[RoleController::class,'updateRole'])->name('
 
 
 });
+
 Route::group(["middleware"=>["checkManager"]],function(){
-     Route::get("/role", [RoleController::class,"start"])->name("role.list");
-     Route::get('/department',[DepartmentController::class,'start'])->name('department');
+Route::get('/department',[DepartmentController::class,'start'])->name('department');
+Route::get('/employee',[EmployeeController::class,'field'])->name('employee');
+Route::get('/designation',[DesignationController::class,'startOne'])->name('designation');
+Route::get('/salary',[SalaryController::class,'startNow'])->name('salary');
+Route::get('/leaveapply',[leaveApplyController::class,'start'])->name('leaveapply');
+Route::get('/leaveapply/approve/{leaveapply_id}',[LeaveApplyController::class,'approve'])->name('leaveapply.approve');
+Route::get('/leaveapply/reject/{leaveapply_id}',[LeaveApplyController::class,'reject'])->name('leaveapply.reject');
+
 });
 
-
-
-
-
-
-
-
-Route::get('/salary',[SalaryController::class,'startNow'])->name('salary');
-Route::get('/salary/form',[SalaryController::class,'formcreate'])->name('salary.form');
-Route::post('/salary/form/store',[SalaryController::class,'store'])->name('salary.form.store');
-Route::get('/salary/delete/{salary_id}',[SalaryController::class,'deleteSalary'])->name('salary.delete');
-Route::get('/salary/view/{salary_id}',[SalaryController::class,'viewSalary'])->name('salary.view');
-Route::get('/salary/edit/{salary_id}',[SalaryController::class,'editSalary'])->name('salary.edit');
-Route::put('/salary/update{salary_id}',[SalaryController::class,'updateSalary'])->name('salary.update');
 
 
 
@@ -141,12 +153,6 @@ Route::put('/leave/update{leave_id}',[LeaveController::class,'updateleave'])->na
 
 
 
-
-Route::get('/leaveapply',[leaveApplyController::class,'start'])->name('leaveapply');
-Route::get('/leaveapply/form',[LeaveApplyController::class,'formcreate'])->name('leaveapply.form');
-Route::post('/leaveapply/form/store',[LeaveApplyController::class,'store'])->name('leaveapply.form.store');
-Route::get('/leaveapply/approve/{leaveapply_id}',[LeaveApplyController::class,'approve'])->name('leaveapply.approve');
-Route::get('/leaveapply/reject/{leaveapply_id}',[LeaveApplyController::class,'reject'])->name('leaveapply.reject');
 
 
 

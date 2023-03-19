@@ -18,6 +18,7 @@ public function start()
 
     $department_list=Department::paginate(5);
 
+
     return view('backend.pages.department.form',compact('department_list'));
 }
 
@@ -45,7 +46,7 @@ return redirect()->route('department');
 
 
 
-public function deleteDepartment(int $department_id)
+public function deleteDepartment( $department_id)
     {
            $test=Department::find($department_id);
              if($test)

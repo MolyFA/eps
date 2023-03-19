@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained("users")->cascadeOnDelete();
             $table->string('phone',20)->nullable();
             $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();
-            $table->foreignId('salary_id')->constrained("salaries");
+            $table->foreignId('designation_id')->constrained('designations')->cascadeOnDelete();
+            $table->foreignId('salary_id')->constrained("salaries")->casecadeOnDelete();
 
             $table->string('image',20)->nullable();
             $table->timestamps();

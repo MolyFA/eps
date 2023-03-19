@@ -5,14 +5,14 @@
 
 
 
-
-<a href="{{route('department.form')}}"  class="btn btn-success">Create Department</a>
+<div class="container">
+<a  href="{{route('department.form')}}"  class="btn btn-primary my-4" >Create Department</a>
 
 
 <table class="table">
   <thead>
     <tr>
-    <th scope="col">ID</th>
+    <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
@@ -47,6 +47,7 @@
 
   </tbody>
 </table>
+</div>
 
 {{$department_list->links()}}
 

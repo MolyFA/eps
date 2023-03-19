@@ -11,7 +11,8 @@
   <thead>
     <tr>
     <th scope="col">ID</th>
-      <th scope="col">Tittle</th>
+      <th scope="col">Department</th>
+      <th scope="col">Designation</th>
       <th scope="col">Basic Salary</th>
       <th scope="col">House Rent</th>
       <th scope="col">Medical</th>
@@ -27,7 +28,8 @@
 
   <tr>
       <th scope="row">{{$data->id}}</th>
-      <td>{{$data->tittle}}</td>
+      <td>{{$data->department->name}}</td>
+      <td>{{$data->designation->name}}</td>
       <td>{{$data->basic_salary}}</td>
       <td>{{$data->house_rent}}</td>
       <td>{{$data->medical}}</td>

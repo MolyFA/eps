@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Department;
 use App\Models\Designation;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class DesignationController extends Controller
@@ -21,9 +22,9 @@ class DesignationController extends Controller
 
     public function formcreate()
     {
-       
-
-       return view('backend.pages.designation.formcreate');
+      $department = Department::all();
+      //dd($department);
+       return view('backend.pages.designation.formcreate',compact('department'));
 
 
     }
@@ -38,7 +39,8 @@ class DesignationController extends Controller
 
 
         Designation::create([
-           
+
+            'department_id'=>$request->department,
             'name'=>$request->user_name,
     
         ]);
@@ -102,7 +104,7 @@ class DesignationController extends Controller
          ]);
 
 
-     return redirect()->route('designation.form')->with('message','Update success.');
+     return redirect()->route('designation')->with('message','Update success.');
 
         
 }

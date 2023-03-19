@@ -27,6 +27,7 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Department</th>
+      <th scope="col">Designation</th>
       <th scope="col">Role </th>
       <th scope="col">Salary</th>
       <th scope="col">Image</th>
@@ -36,19 +37,20 @@
   </thead>
   <tbody>
     
-  
+ 
  
   @foreach($employee_list as $key=>$data)
-
-
+ 
     <tr>
+    
       <th scope="row">{{$data->id}}</th>
       <td>{{$data->user?->name}}</td>
       <td>{{$data->user?->email}}</td>
       <td>{{$data->phone}}</td>
       <td>{{$data->department->name}}</td>
+      <td>{{$data->designation->name}}</td>
       <td>{{$data->user?->role?->name}}</td>
-      <td>{{$data->salary->basic_salary + $data->salary->house_rent + $data->salary->medical + $data->salary->transport}}</td>
+      <td>{{$data->designation->name,$data->salary->basic_salary + $data->salary->house_rent + $data->salary->medical + $data->salary->transport}}</td>
       
       <td>
                 
