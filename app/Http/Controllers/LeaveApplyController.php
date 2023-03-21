@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\LeaveApply;
 use App\Models\LeaveType;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LeaveApplyController extends Controller
@@ -70,9 +71,9 @@ class LeaveApplyController extends Controller
 
 
 
-    public function reject( int $leaveapply_id)
+    public function reject(int $leaveapply_id)
     {
-        
+
         $test = LeaveApply::find($leaveapply_id);
         if ($test) {
             $test->update([
@@ -84,11 +85,30 @@ class LeaveApplyController extends Controller
             notify()->error("Something went worng");
             return redirect()->back();
         }
-        
-        
-
-
     }
 
 
+
+    public function report()
+    {
+        $startDate = Carbon::now();
+        $firstDay = $startDate->firstOfMonth()->toDateString();
+        $lastDay = $startDate->endOfMonth()->toDateString();
+        
+        $leave=LeaveApply::whereBetween("updated_at",[$firstDay,$lastDay])->where("status","approved");
+        
+        $emp_ids = $leave->pluck("employee_id")->toArray();
+        $unique_emp = array_unique($emp_ids);
+        $unique_leave = collect([]);
+        foreach($unique_emp as $key=>$id){
+            $leave=LeaveApply::whereBetween("updated_at",[$firstDay,$lastDay])->where("status","approved");
+            $countLeave = $leave->where("employee_id",$id)->get();
+            $count = count($countLeave);
+            $countLeave[0]->count = $count;
+            $data = $countLeave[0];
+            $unique_leave->push($data);
+        }
+
+        return view('backend.pages.leaveapply.reportlist',compact("unique_leave"));
+    }
 }

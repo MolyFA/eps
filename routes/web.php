@@ -7,6 +7,8 @@ use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\LeaveTypeController;
+use App\Http\Controllers\LeaveReportController;
+use App\Http\Controllers\SalaryReportController;
 use App\Http\Controllers\LeaveApplyController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PaymentController;
@@ -62,7 +64,7 @@ Route::get('/employee/delete/{employee_id}',[EmployeeController::class,'deleteEm
 
 Route::get('/employee/edit{employee_id}',[EmployeeController::class,'editEmployee'])->name('employee.edit');
 Route::put('/employee/update{employee_id}',[EmployeeController::class,'updateEmployee'])->name('employee.update');
-
+Route::post("/get-salary",[EmployeeController::class,'getSalary'])->name("get.salary");
 
 
 
@@ -88,11 +90,13 @@ Route::get('/salary/delete/{salary_id}',[SalaryController::class,'deleteSalary']
 Route::get('/salary/view/{salary_id}',[SalaryController::class,'viewSalary'])->name('salary.view');
 Route::get('/salary/edit/{salary_id}',[SalaryController::class,'editSalary'])->name('salary.edit');
 Route::put('/salary/update{salary_id}',[SalaryController::class,'updateSalary'])->name('salary.update');
+Route::post("/get-designation",[SalaryController::class,'getDesignation'])->name("get.designation");
 
 
 Route::get('/leaveapply/form',[LeaveApplyController::class,'formcreate'])->name('leaveapply.form');
 Route::post('/leaveapply/form/store',[LeaveApplyController::class,'store'])->name('leaveapply.form.store');
 
+Route::get('/leave/report',[LeaveApplyController::class,'report'])->name('leave.report');
 
 
 
@@ -111,6 +115,12 @@ Route::get('/leavetype/delete/{leavetype_id}',[LeaveTypeController::class,'delet
 Route::get('/leavetype/view/{leavetype_id}',[LeaveTypeController::class,'viewleavetype'])->name('leavetype.view');
 Route::get('/leavetype/edit/{leavetype_id}',[LeaveTypeController::class,'editleavetype'])->name('leavetype.edit');
 Route::put('/leavetype/update{leavetype_id}',[LeaveTypeController::class,'updateleavetype'])->name('leavetype.update');
+
+
+
+Route::get('/salary/report',[SalaryReportController::class,'report'])->name('salary.report');
+
+
 
 
 Route::get("/role", [RoleController::class,"start"])->name("role.list");

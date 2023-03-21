@@ -10,7 +10,7 @@
 
 <div class="from-group">
    <label for=""><b>Select Department</b></label>
-   <select name="department" id="" class="form-control">
+   <select name="department" id="department" class="form-control">
      @foreach($department as $item)
      <option value="{{$item->id}}">{{$item->name}}</option>
      @endforeach
@@ -19,7 +19,7 @@
 
 <div class="from-group">
      <label for=""><b>Select Designation</b></label>
-     <select name="designation" id="" class= "form-control"> 
+     <select name="designation" id="designation" class= "form-control"> 
           @foreach($designation as $item)
           <option value="{{$item->id}}">{{$item->name}}</option>
           @endforeach
@@ -82,4 +82,33 @@
 
 
 
+@endsection
+
+@section('scripts')
+     <script>
+          $(document).ready(function () {
+          $("#department").on("change",function () {
+               var id = $("#department").val();
+               // console.log(id);
+               if(id){
+                    $.ajax({
+                         url:"{{route('get.designation')}}",
+                         type:"post",
+                         data:{id},
+                         dataType:"json",
+                         success:function (data) {
+                              console.log(data);
+                              $("#designation").empty()
+                              $("#designation").append("<option>Select Designation</option>")
+                              $.each(data, function (key, value) {
+                                   console.log(value)
+                                   $("#designation").append(`<option value="${value.id}">${value.name}</option>`)
+                              })
+                         }
+
+                    });
+               }
+          })
+     })
+     </script>
 @endsection

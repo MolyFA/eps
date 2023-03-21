@@ -50,7 +50,15 @@
       <td>{{$data->department->name}}</td>
       <td>{{$data->designation->name}}</td>
       <td>{{$data->user?->role?->name}}</td>
-      <td>{{$data->designation->name,$data->salary->basic_salary + $data->salary->house_rent + $data->salary->medical + $data->salary->transport}}</td>
+      @php
+        $salary = $data->salary;
+        $basic_salary = $salary->basic_salary;
+        $house_rent = $basic_salary * ($salary->house_rent /100);
+        $medical = $basic_salary * ($salary->medical /100);
+        $transport = $basic_salary * ($salary->transport /100);
+        $totalSalary = $basic_salary + $house_rent + $medical + $transport;
+      @endphp
+      <td>{{ $totalSalary}}</td>
       
       <td>
                 

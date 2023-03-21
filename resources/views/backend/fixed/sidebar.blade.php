@@ -61,11 +61,18 @@
        <li>
          <a class="" href="{{route('salary')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Salary</span>
-
-
-         </a>
-
+        </a>
        </li>
+
+       <li>
+         <a class="" href="{{route('salary.report')}}" aria-expanded="false">
+           <i class="icon-grid menu-icon"></i><span>Salary Report</span>
+        </a>
+       </li>
+
+
+
+
 
 
        @if(auth()->user()->role->name == 'admin' )
@@ -83,11 +90,21 @@
          <a class="" href="{{route('leaveapply')}}" aria-expanded="false">
 
            <i class="icon-grid menu-icon"></i><span>Leave Apply</span>
-
-
          </a>
 
        </li>
+
+
+       <li>
+         <a class="" href="{{route('leave.report')}}" aria-expanded="false">
+           <i class="icon-grid menu-icon"></i><span>Leave Report</span>
+         </a>
+       </li>
+
+
+
+
+
        <li>
 
          <a class="" href="{{route('attendance')}}" aria-expanded="false">

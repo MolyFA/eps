@@ -12,6 +12,7 @@
     <title>Employee Payroll System</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Pignose Calender -->
     <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
     <!-- Chartist -->
@@ -131,13 +132,12 @@
         $('#sslczPayBtn').prop('postdata', obj);
     </script>
     <script>
-        
-            // const id = $("#sslczPayBtn").data("id")
-            // let total = $(`#total_amount-${id}`).text();
-            // total = total.split("$")[1];
-            // $(`#total_payment-${id}`).val(total);
-            // console.log(total)
-       
+        // const id = $("#sslczPayBtn").data("id")
+        // let total = $(`#total_amount-${id}`).text();
+        // total = total.split("$")[1];
+        // $(`#total_payment-${id}`).val(total);
+        // console.log(total)
+
 
         (function(window, document) {
             var loader = function() {
@@ -150,6 +150,15 @@
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
         })(window, document);
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    @yield("scripts")
 
 </body>
 

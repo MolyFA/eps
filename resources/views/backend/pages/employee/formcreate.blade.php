@@ -40,19 +40,17 @@
 
         <div class="form-group">
             <label for=""><b>Select Department</b></label>
-            <select id="department_id" name="department_id" class="form-control">
+            <select id="department" name="department_id" class="form-control">
                 @foreach($department as $item)
-            <option id="department_id" name="department_id" value="{{$item->id}}">{{$item->name }}</option>
+            <option value="{{$item->id}}">{{$item->name }}</option>
             @endforeach
         </select>
         </div>
 
        <div class="form-group">
         <label for=""><b>Select Designation</b></label>
-        <select name="designation" id="" class="form-control">
-            @foreach($designation as $item)
-            <option value="{{$item->id}}">{{$item->name}}</option>
-             @endforeach
+        <select name="designation" id="designation" class="form-control">
+           
         </select>
         
        </div>
@@ -74,10 +72,8 @@
 
         <div class="form-group">
             <label for=""><b>Select Salary</b></label>
-            <select name="salary" id="" class="form-control">
-                @foreach($salary as $item)
-            <option value="{{$item->id}}">{{$item->tittle }}</option>
-            @endforeach
+            <select name="salary" id="salary" class="form-control">
+               
 
         </select>
         </div>
@@ -103,4 +99,52 @@
 
 </form>
 
+@endsection
+
+
+@section('scripts')
+     <script>
+          $(document).ready(function () {
+          $("#department").on("change",function () {
+               var id = $("#department").val();
+               // console.log(id);
+               if(id){
+                    $.ajax({
+                         url:"{{route('get.designation')}}",
+                         type:"post",
+                         data:{id},
+                         dataType:"json",
+                         success:function (data) {
+                              console.log(data);
+                              $("#designation").empty()
+                              $("#designation").append("<option>Select Designation</option>")
+                              $.each(data, function (key, value) {
+                                   console.log(value)
+                                   $("#designation").append(`<option value="${value.id}">${value.name}</option>`)
+                              })
+                         }
+
+                    });
+               }
+          })
+          $("#designation").on("change",function () {
+               var id = $("#designation").val();
+               // console.log(id);
+               if(id){
+                    $.ajax({
+                         url:"{{route('get.salary')}}",
+                         type:"post",
+                         data:{id},
+                         dataType:"json",
+                         success:function (data) {
+                              console.log(data);
+                              $("#salary").empty()
+                              $("#salary").append(`<option value="${data.id}">${data.basic_salary}</option>`)
+                         }
+
+                    });
+               }
+          })
+     })
+     </script>
 @endsection
