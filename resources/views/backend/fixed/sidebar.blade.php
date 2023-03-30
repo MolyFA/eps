@@ -65,6 +65,15 @@
        </li>
 
        <li>
+         <a class="" href="{{route('monthly.salary')}}" aria-expanded="false">
+           <i class="icon-grid menu-icon"></i><span> Monthly Salary</span>
+        </a>
+       </li>
+
+
+
+
+       <li>
          <a class="" href="{{route('salary.report')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Salary Report</span>
         </a>

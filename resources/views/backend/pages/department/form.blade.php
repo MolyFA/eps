@@ -4,7 +4,7 @@
 <h1>Department List</h1>
 
 
-
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <div class="container">
 <a  href="{{route('department.form')}}"  class="btn btn-primary my-4" >Create Department</a>
 

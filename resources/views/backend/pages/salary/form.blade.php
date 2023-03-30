@@ -4,7 +4,7 @@
 
 <h1>Salary List</h1>
 
-<a href="{{route('salary.form')}}"   class="btn btn-success">Create Salary</a>
+<a href="{{route('salary.form')}}"   class="btn btn-info">Create Salary</a>
 
 
 <table class="table">
@@ -40,6 +40,9 @@
                 <a href="{{route('salary.edit',$data->id)}}" class="btn btn-outline-primary">Edit</a>
                 <a href="{{route('salary.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
                 <a href="{{route('salary.view',$data->id)}}" class="btn btn-outline-success">View</a>
+                
+                
+
             </td>
 
 

@@ -89,12 +89,17 @@ Route::post('/salary/form/store',[SalaryController::class,'store'])->name('salar
 Route::get('/salary/delete/{salary_id}',[SalaryController::class,'deleteSalary'])->name('salary.delete');
 Route::get('/salary/view/{salary_id}',[SalaryController::class,'viewSalary'])->name('salary.view');
 Route::get('/salary/edit/{salary_id}',[SalaryController::class,'editSalary'])->name('salary.edit');
-Route::put('/salary/update{salary_id}',[SalaryController::class,'updateSalary'])->name('salary.update');
+Route::put('/salary/update/{salary_id}',[SalaryController::class,'updateSalary'])->name('salary.update');
 Route::post("/get-designation",[SalaryController::class,'getDesignation'])->name("get.designation");
+Route::get('/monthly/salary',[SalaryController::class,'monthlysalary'])->name('monthly.salary');
+Route::get('/generate/salary',[SalaryController::class,'generatesalary'])->name('generate.salary');
+Route::get('/salary/calculate/{salary_id}',[SalaryController::class,'salarycalculate'])->name('salary.calculate');
+Route::post('/save/here/{id}',[SalaryController::class,'savehere'])->name("save.here");
 
 
 Route::get('/leaveapply/form',[LeaveApplyController::class,'formcreate'])->name('leaveapply.form');
 Route::post('/leaveapply/form/store',[LeaveApplyController::class,'store'])->name('leaveapply.form.store');
+
 
 Route::get('/leave/report',[LeaveApplyController::class,'report'])->name('leave.report');
 

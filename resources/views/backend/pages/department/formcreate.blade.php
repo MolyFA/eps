@@ -9,7 +9,7 @@
 
         <div class="form-group">
             <label for="name"><b>Name</b></label>
-            <input type="string" class="form-control" id="name" name="name" placeholder="Enter Department name">
+            <input required type="string" class="form-control" id="name" name="name" placeholder="Enter Department name">
         </div>
 
         <div class="form-group">

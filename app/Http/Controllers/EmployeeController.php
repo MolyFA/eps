@@ -22,10 +22,6 @@ class EmployeeController extends Controller
 
     $employee_list = Employee::with('department')->with("user")->paginate(5);
 
-
-
-
-
     return view('backend.pages.employee.form', compact('employee_list'));
   }
 
@@ -47,7 +43,7 @@ class EmployeeController extends Controller
   public function store(Request $request)
   {
 
-    // dd($request->all());
+    //dd($request->all());
     $request->validate([
       'user_name' => 'required',
       'user_email' => 'required|unique:users,email',

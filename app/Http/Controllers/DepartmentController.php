@@ -32,6 +32,11 @@ public function formcreate()
 public function store(Request $request)
 {
 
+//dd($request->all());
+  $request->validate([
+    'name' => 'required',
+  ]);
+
   //dd($request->all());
 
   Department::create([

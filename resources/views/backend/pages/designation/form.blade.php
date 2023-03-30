@@ -4,9 +4,10 @@
 
 <h1>Designation List</h1>
 
+<div class ="container">
 
-
-<a href="{{route('designation.form')}}"   class="btn btn-success">Create Designation</a>
+<a href="{{route('designation.form')}}"   class="btn btn-primary">Create Designation</a>
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
 
 <table class="table">
@@ -46,6 +47,6 @@
 
 </tboay>
 </table>
-
+</div>
 
 @endsection

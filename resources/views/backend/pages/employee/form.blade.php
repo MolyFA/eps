@@ -12,10 +12,13 @@
         <p class="alert alert-danger">{{session()->get('error')}}</p>
     @endif
 
+<div class="container">
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
+
 
 @if(auth()->user()->role->name != "Employee")
 
-<a href="{{route('employee.form')}}"   class="btn btn-success">Create Employee</a>
+<a href="{{route('employee.form')}}"   class="btn btn-primary">Create Employee</a>
 @endif
 
 
@@ -85,6 +88,7 @@
 
 </table>
 
+</div>
 
 
 {{$employee_list->links()}}

@@ -53,8 +53,9 @@ button:hover, a:hover {
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
   
 
-  
-  <p class="title">{{$salary->tittle}}</p>
+ 
+  <p class="title">{{$salary->department->name}}</p>
+  <p>{{$salary->designation->name}}</p>
   <p>{{$salary->basic_salary}}</p>
   <p>{{$salary->house_rent}}</p>
   <p>{{$salary->medical}}</p>
