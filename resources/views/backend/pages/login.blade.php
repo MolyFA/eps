@@ -13,7 +13,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY-W_0bbkoBLZ2OddOp9U2OpImyc9GT1q-xCbiP5QqfJ1wPc5Hor9N1jyzNLw5G838fz0&usqp=CAU" id="icon" alt="User Icon" />
+      <img src="https://www.outsourcinginsight.com/wp-content/uploads/2016/08/benefits-payroll-outsourcing.jpg" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
@@ -26,7 +26,7 @@
 
 
       <input type="text" id="login" class="fadeIn second" name="email" placeholder="Enter email">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Enter password">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Enter password"><br>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 

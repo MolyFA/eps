@@ -48,11 +48,6 @@ public function checkoutAttendance()
     $employee = Employee::where("user_id",auth()->user()->id)->first();
     $todayData = Attendance::where('employee_id',$employee->id)->whereDate('created_at',now())->first();
 
-   
-
-        
-    
-
     if($todayData)
     {
         if($todayData->checkout_time == null){

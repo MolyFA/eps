@@ -97,8 +97,8 @@ Route::get('/salary/calculate/{salary_id}',[SalaryController::class,'salarycalcu
 Route::post('/save/here/{id}',[SalaryController::class,'savehere'])->name("save.here");
 
 
-Route::get('/leaveapply/form',[LeaveApplyController::class,'formcreate'])->name('leaveapply.form');
-Route::post('/leaveapply/form/store',[LeaveApplyController::class,'store'])->name('leaveapply.form.store');
+
+
 
 
 Route::get('/leave/report',[LeaveApplyController::class,'report'])->name('leave.report');
@@ -151,6 +151,10 @@ Route::get('/leaveapply/reject/{leaveapply_id}',[LeaveApplyController::class,'re
 });
 
 
+
+
+Route::get('/leaveapply/form',[LeaveApplyController::class,'formcreate'])->name('leaveapply.form');
+Route::post('/leaveapply/form/store',[LeaveApplyController::class,'store'])->name('leaveapply.form.store');
 
 
 

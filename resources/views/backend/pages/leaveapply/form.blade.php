@@ -6,7 +6,7 @@
 
 <h1>LeaveApplying List</h1>
 
-<a href="{{route('leaveapply.form')}}"   class="btn btn-success">Create LeaveApply</a>
+<a href="{{route('leaveapply.form')}}"   class="btn btn-success">Apply For Leave</a>
 
 
 <table class="table">

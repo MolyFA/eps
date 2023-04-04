@@ -2,10 +2,11 @@
 
 @section('content')
 
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
+<h1>Pay Slip</h1>
 
-<h1>Monthly salary</h1>
-
-@if(!$salaries)
+<label for=""><input type="month"></label>
+@if($salaries->count() === 0)
 
 <a href="{{route('generate.salary')}}" class="btn btn-primary">Generate Salary</a>
 

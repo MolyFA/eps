@@ -13,9 +13,6 @@
     <th scope="col">#</th>
     <th scope="col">Employee Name</th>
      <th scope="col">Date</th>
-      <th scope="col">Deduction_salary</th>
-      <th scope="col">Bonus</th>
-      <th scope="col">Total_Salary</th>
       <th scope="col">Total_Amount</th>
       <th scope="col">Action</th>
 
@@ -23,26 +20,21 @@
   </thead>
   <tbody>
 
-  @foreach ($payment_list as $key=>$data)
+  @foreach ($salaries as $key=>$data)
   
-  @php 
-      $salary = $data->employee->salary;
-      $totalSalary = $salary->basic_salary + $salary->house_rent+ $salary->medical+ $salary->transport;
-  @endphp
+ 
     <tr>
 
     
       <th scope="row">{{$key + 1}}</th>
       <td>{{$data->employee->user->name}}</td>
-      <td>{{$data->date}}</td>
-      <td>{{$data->deduction_salary}}</td>
-      <td>{{$data->bonus}}</td>
-      <td>{{$totalSalary}}</td>
-      <td id="total_amount-{{$data->id}}">${{($totalSalary + $data->bonus) - $data->deduction_salary }}</td>
+      <td>{{$data->created_at}}</td>
+
+      <td id="total_amount-{{$data->id}}">{{$data->net_salary}}</td>
       <td>
         <form action="{{route('pay.now', $data->id)}}" method="post">
           @csrf
-          <input type="hidden" name="total_payment" id="total_payment-{{$data->id}}" value="{{($totalSalary + $data->bonus) - $data->deduction_salary }}">
+          <input type="hidden" name="total_payment" id="total_payment-{{$data->id}}" value="{{$data->net_salary}}">
           <button type="submit" class="btn btn-outline-primary" data-id="{{$data->id}}">Payment Salary</button>  
         </form>
       </td>

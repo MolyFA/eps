@@ -66,7 +66,7 @@
 
        <li>
          <a class="" href="{{route('monthly.salary')}}" aria-expanded="false">
-           <i class="icon-grid menu-icon"></i><span> Monthly Salary</span>
+           <i class="icon-grid menu-icon"></i><span>Pay Slip</span>
         </a>
        </li>
 
@@ -75,7 +75,7 @@
 
        <li>
          <a class="" href="{{route('salary.report')}}" aria-expanded="false">
-           <i class="icon-grid menu-icon"></i><span>Salary Report</span>
+           <i class="icon-grid menu-icon"></i><span>Monthly Salary Report</span>
         </a>
        </li>
 

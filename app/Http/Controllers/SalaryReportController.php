@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\MonthlySalary;
 use App\Models\Salary;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class SalaryReportController extends Controller
 {
     public function report()
     {
-
+      
       $employees = Employee::with("user")->with("salary")->with("department")->with("designation")->get();
 
       //dd($employees);
@@ -28,6 +29,8 @@ class SalaryReportController extends Controller
       //dd(array_unique($desig));
       $unique_desig = array_unique($desig);
 
-      return view('backend.pages.salaryreport.list',compact('salary','unique_desig','employees'));  
+      $salaries = MonthlySalary::whereMonth("created_at",date("m"))->get();
+      //dd($salaries);
+      return view('backend.pages.salaryreport.list',compact('salary','unique_desig','employees','salaries'));  
     }
 }

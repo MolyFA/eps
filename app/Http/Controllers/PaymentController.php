@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Attendance;
 use App\Models\Employee;
+use App\Models\MonthlySalary;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 
@@ -52,7 +53,10 @@ class PaymentController extends Controller
             $payment_list=Payment::where("employee_id",$employee->id)->get();
         }
 
-        return view('backend.pages.payment.list', compact("totalPresent","employee_list","payment_list"));
+
+        $salaries = MonthlySalary::whereMonth("created_at",date("m"))->get();
+
+        return view('backend.pages.payment.list', compact("totalPresent","employee_list","payment_list",'salaries'));
     }
 
 
