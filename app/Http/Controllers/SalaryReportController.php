@@ -33,4 +33,18 @@ class SalaryReportController extends Controller
       //dd($salaries);
       return view('backend.pages.salaryreport.list',compact('salary','unique_desig','employees','salaries'));  
     }
+
+
+    public function certificate()
+
+    {
+      return view('backend.pages.salaryreport.certificate');
+    }
+    
+
+
+
+
+
+
 }

@@ -124,7 +124,7 @@ Route::put('/leavetype/update{leavetype_id}',[LeaveTypeController::class,'update
 
 
 Route::get('/salary/report',[SalaryReportController::class,'report'])->name('salary.report');
-
+Route::get('/salary/certificate',[SalaryReportController::class,'certificate'])->name('salary.certificate');
 
 
 

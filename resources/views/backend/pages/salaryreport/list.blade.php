@@ -75,7 +75,7 @@
       <td scope="col">{{$bonus}}</td>
       <td scope="col">{{$grossSalary+$bonus-$deduction}}</td>
       <td><a href="{{route('salary.calculate',$data->id)}}" class="btn btn-info">Calculate Total Salary</a></td>
-      <td><a href="" class="btn btn-info">Salary Certificate</a></td>
+      <td><a href="{{route('salary.certificate')}}" class="btn btn-info">Salary Certificate</a></td>
     </tr>
  
 
