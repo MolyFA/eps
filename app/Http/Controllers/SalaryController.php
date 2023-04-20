@@ -16,7 +16,7 @@ class SalaryController extends Controller
 {
     public function startNow()
     {
-        $salary_list = Salary::all();
+        $salary_list = Salary::paginate(5);
 
         //dd($salary_list);
         return view('backend.pages.salary.form', compact('salary_list'));
@@ -40,7 +40,22 @@ class SalaryController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request->all());
+        //dd($request->all());
+
+
+        $request->validate([
+
+            'department'=>'required',
+            'designation'=>'required',
+            'basic_salary'=>'required',
+            'house_rent'=>'required',
+            'medical'=>'required',
+            'transport'=>'required'
+
+
+
+        ]);
+
 
         Salary::create([
             'department_id' => $request->department,

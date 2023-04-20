@@ -26,7 +26,7 @@
     </tr>
   </thead>
   <tbody>
-     @foreach($salaries as $salary)
+     @foreach($salaries as $key=>$salary)
     
      @php
           $deduction = 0;
@@ -44,9 +44,9 @@
 
      @endphp
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$key+1}}</th>
       <td>{{$salary->created_at->format('M')}}</td>
-      <td>{{$salary->employee->user->name}}</td>
+      <td>{{$salary->employee?->user->name}}</td>
       <td>{{$deduction}}</td>
       <td>{{$totalBonus}}</td>
       <td>{{($salary->net_salary + $totalBonus) - $deduction}}</td>

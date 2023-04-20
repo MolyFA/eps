@@ -6,10 +6,10 @@
 <h1>Attendance List</h1>
 
 
-<a href="{{route('attendance.check')}}"  class="btn btn-success">Checkin_Attendance</a>
+<a href="{{route('attendance.check')}}"  class="btn btn-primary">Checkin_Attendance</a>
 <br>
 <br>
-<a href="{{route('attendance.check-out')}}"  class="btn btn-success">Checkout_Attendance</a>
+<a href="{{route('attendance.check-out')}}"  class="btn btn-primary">Checkout_Attendance</a>
 
 
 <table class="table">

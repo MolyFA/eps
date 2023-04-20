@@ -9,7 +9,7 @@ class RoleController extends Controller
 {
     public function start(){
 
-        $roles = Role::all();
+        $roles = Role::paginate(2);
         return view('backend.pages.role.list', compact('roles'));
     }
     public function create(){

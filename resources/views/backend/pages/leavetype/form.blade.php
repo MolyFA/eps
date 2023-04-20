@@ -5,8 +5,8 @@
 
 <h1>LeaveType List</h1>
 
-<a href="{{route('leavetype.form')}}"   class="btn btn-success">Create LeaveType</a>
-
+<a href="{{route('leavetype.form')}}"   class="btn btn-primary">Create LeaveType</a>
+<div class="container">
 
 
 
@@ -44,14 +44,12 @@
 @endforeach
 </tbody>
 </table>
+</div>
 
-
+{{$leavetype_list->links()}}
 
     
   
- 
-
-
 
 @endsection
 

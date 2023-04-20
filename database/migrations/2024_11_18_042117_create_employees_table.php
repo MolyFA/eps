@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();
             $table->foreignId('designation_id')->constrained('designations')->cascadeOnDelete();
             $table->foreignId('salary_id')->constrained("salaries")->casecadeOnDelete();
-
+            $table->softDeletes();
             $table->string('image',20)->nullable();
             $table->timestamps();
         });

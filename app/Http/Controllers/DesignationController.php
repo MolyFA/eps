@@ -12,7 +12,7 @@ class DesignationController extends Controller
     public function startOne()
     {
 
-        $designation_list=Designation::all();
+        $designation_list=Designation::paginate(5);
         //dd($designation_list);
         
         return view('backend.pages.designation.form',compact('designation_list'));
@@ -35,6 +35,9 @@ class DesignationController extends Controller
 
         //dd($request->all());
 
+        $request->validate([
+            'name' => 'required',
+          ]);
 
         Designation::create([
 

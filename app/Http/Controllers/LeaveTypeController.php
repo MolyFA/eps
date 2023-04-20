@@ -10,7 +10,7 @@ class LeaveTypeController extends Controller
     public function start()
     {
 
-        $leavetype_list=LeaveType::all();
+        $leavetype_list=LeaveType::paginate(2);
         return view('backend.pages.leavetype.form',compact('leavetype_list'));
     }
 
@@ -30,6 +30,11 @@ class LeaveTypeController extends Controller
 
         //dd($request->all());
 
+        $request->validate([
+
+            'tittle'=>'required',
+
+        ]);
 
 
         LeaveType::create([

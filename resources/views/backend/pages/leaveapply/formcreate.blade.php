@@ -27,18 +27,18 @@
 
         <div class="form-group">
             <label for="date"><b>Date</b></label>
-            <input type="date" class="form-control" id="date" name="leaveapply_date" placeholder="Enter leaveapply date">
+            <input required type="date" class="form-control" id="date" name="leaveapply_date" placeholder="Enter leaveapply date">
         </div>
 
 
        <div class="form-group">
             <label for="tittle"><b>Tittle</b></label>
-            <input type="text" class="form-control" id="tittle" name="leaveapply_tittle" placeholder="Enter leaveapply tittle">
+            <input required type="text" class="form-control" id="tittle" name="leaveapply_tittle" placeholder="Enter leaveapply tittle">
         </div>
 
         <div class="form-group">
             <label for="letter"><b>Letter</b></label>
-            <input type="text" class="form-control" id="letter" name="leaveapply_letter" placeholder="Enter leaveapply letter">
+            <input required type="text" class="form-control" id="letter" name="leaveapply_letter" placeholder="Enter leaveapply letter">
         </div>
 
 

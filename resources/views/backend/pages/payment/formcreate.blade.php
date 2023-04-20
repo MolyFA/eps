@@ -20,15 +20,15 @@
 
         <div class="form-group">
             <label for="date"><b>Date</b></label>
-            <input type="date" class="form-control" id="date" name="date" placeholder="Enter Payment date">
+            <input required type="date" class="form-control" id="date" name="date" placeholder="Enter Payment date">
         </div>
         <div class="form-group">
             <label for="deduction salary"><b>Deduction_Salary</b></label>
-            <input type="number" class="form-control" id="deduction salary" name="deduction salary" placeholder="Enter Deduction salary">
+            <input required type="number" class="form-control" id="deduction salary" name="deduction salary" placeholder="Enter Deduction salary">
         </div>
         <div class="form-group">
             <label for="bonus"><b>Bonus</b></label>
-            <input type="number" class="form-control" id="bonus" name="bonus" placeholder="Enter bonus">
+            <input required type="number" class="form-control" id="bonus" name="bonus" placeholder="Enter bonus">
         </div>
         
         <div class="form-group">

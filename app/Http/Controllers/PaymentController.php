@@ -10,12 +10,13 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function start()
+    public function start() 
     {
 
         $att = Attendance::where("employee_id", auth()->user()->id)->get();
         $att_count = count($att);
-        
+        //dd($att);
+        //dd( $att_count);
         
 
         $dateFrom = new \DateTime(now()->startOfMonth());
@@ -54,7 +55,7 @@ class PaymentController extends Controller
         }
 
 
-        $salaries = MonthlySalary::whereMonth("created_at",date("m"))->get();
+        $salaries = MonthlySalary::whereMonth("created_at",date("m"))->paginate(5);
 
         return view('backend.pages.payment.list', compact("totalPresent","employee_list","payment_list",'salaries'));
     }
@@ -72,7 +73,20 @@ class PaymentController extends Controller
 
     }
     public function store(Request $request){
-       // dd($request->all());
+
+    //dd($request->all());
+
+
+       $request->validate([
+
+        'employee_id'=>'required',
+        'date'=>'required',
+        'deduction_salary'=>'required',
+        'bonus'=>'required',
+
+       ]);
+
+
         Payment::create([
            'employee_id'=>$request->employee_id,
            'date'=>$request->date,

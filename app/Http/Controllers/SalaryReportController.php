@@ -35,10 +35,13 @@ class SalaryReportController extends Controller
     }
 
 
-    public function certificate()
+    public function certificate($id)
 
     {
-      return view('backend.pages.salaryreport.certificate');
+
+      $salary=MonthlySalary::find($id);
+      // dd($salary);
+      return view('backend.pages.salaryreport.certificate',compact('salary'));
     }
     
 

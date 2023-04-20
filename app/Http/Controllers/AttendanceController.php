@@ -73,9 +73,4 @@ public function checkoutAttendance()
 
 }
 
-
-
-
-
-
 }

@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div class="container">
 <h1>LeaveApplying List</h1>
 
 <a href="{{route('leaveapply.form')}}"   class="btn btn-success">Apply For Leave</a>
@@ -34,7 +34,7 @@
 
 <tr>
     <th scope="row">{{$data->id}}</th>
-    <td>{{$data->employee->user->name,$data->employee->user_id,$data->employee->user->email,$data->employee->user->email_verified_at,$data->employee->user->password}}</td>
+    <td>{{$data->employee?->user->name,$data->employee?->user_id,$data->employee?->user->email,$data->employee?->user->email_verified_at,$data->employee?->user->password}}</td>
     <td>{{$data->date}}</td>
     <td>{{$data->tittle}}</td>
     <td>{{$data->letter}}</td>
@@ -54,9 +54,9 @@
 @endforeach
 </tbody>
 </table>
+</div>
 
-
-
+{{$leaveapply_list->links()}}
 
 
 

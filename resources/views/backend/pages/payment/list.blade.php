@@ -23,11 +23,9 @@
   @foreach ($salaries as $key=>$data)
   
  
-    <tr>
-
-    
+    <tr>    
       <th scope="row">{{$key + 1}}</th>
-      <td>{{$data->employee->user->name}}</td>
+      <td>{{$data->employee?->user->name}}</td>
       <td>{{$data->created_at}}</td>
 
       <td id="total_amount-{{$data->id}}">{{$data->net_salary}}</td>
@@ -46,7 +44,7 @@
 </table>
 
 
-
+{{$salaries->links()}}
 
 
 

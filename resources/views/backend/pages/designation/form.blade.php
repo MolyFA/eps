@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1>Designation List</h1>
+
 
 <div class ="container">
-
+<h1>Designation List</h1>
 <a href="{{route('designation.form')}}"   class="btn btn-primary">Create Designation</a>
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
@@ -48,5 +48,7 @@
 </tboay>
 </table>
 </div>
+
+{{$designation_list->links()}}
 
 @endsection

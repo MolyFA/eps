@@ -7,7 +7,7 @@
 
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
-<label for=""><input type="month"></label>
+<label for=""><input type="month" value="2023-04"></label>
 <table class="table mt-5">
   <thead>
     <tr class="table-info">
@@ -32,7 +32,7 @@
 
   @foreach($salaries as $key=>$data)
 
-
+@dd($data );
 
 
   @php
@@ -75,7 +75,7 @@
       <td scope="col">{{$bonus}}</td>
       <td scope="col">{{$grossSalary+$bonus-$deduction}}</td>
       <td><a href="{{route('salary.calculate',$data->id)}}" class="btn btn-info">Calculate Total Salary</a></td>
-      <td><a href="{{route('salary.certificate')}}" class="btn btn-info">Salary Certificate</a></td>
+      <td><a href="{{route('salary.certificate',$data->id)}}" class="btn btn-info">Salary Certificate</a></td>
     </tr>
  
 

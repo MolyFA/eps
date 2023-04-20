@@ -11,9 +11,10 @@ class UserController extends Controller
 {
   public function start(){
 
-   
-    $users = User::with("role")->get();
+  
+    $users = User::with("role")->paginate(5);
 
+    
     return view("backend.pages.user.list",compact("users"));
   }
 
@@ -26,6 +27,7 @@ class UserController extends Controller
   }
 
   public function store(Request $request){
+    
     $request->validate([
       "name" => "required|string",
       "role_id" => "required",

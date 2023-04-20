@@ -12,7 +12,8 @@ class LeaveApplyController extends Controller
 {
     public function start()
     {
-        $leaveapply_list = LeaveApply::with('leavetype')->get();
+         
+        $leaveapply_list = LeaveApply::with('leavetype')->paginate(5);
         // dd($leaveapply_list);
         //check for relationship
         // dd($leaveapply_list[0]->employee->name);
@@ -35,6 +36,17 @@ class LeaveApplyController extends Controller
 
 
         //dd($request->all());
+
+
+        $request->validate([
+
+            'employee'=>'required',
+            'leaveapply_date'=>'required',
+            'leaveapply_tittle'=>'required',
+            'leaveapply_letter'=>'required',
+
+        ]);
+
 
         LeaveApply::create([
             'employee_id' => $request->employee,

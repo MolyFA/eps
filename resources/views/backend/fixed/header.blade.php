@@ -78,7 +78,7 @@
                   <ul>
                     <hr class="my-2">
                   
-                       
+                       <li><a href=""><i class ="icon-man"><span>Profile</span></i></a></li>
                     <li><a href="{{route('logout')}}"><i class="icon-key"></i> <span>Logout</span></a></li>
                   </ul>
              

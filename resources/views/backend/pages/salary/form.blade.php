@@ -2,6 +2,9 @@
 
 @section('content')
 
+
+
+<div class="container">
 <h1>Salary List</h1>
 
 <a href="{{route('salary.form')}}"   class="btn btn-info">Create Salary</a>
@@ -52,8 +55,11 @@
 @endforeach
   </tbody>
 </table>
+</div>
 
 
 
+
+{{$salary_list->links()}}
 
 @endsection
