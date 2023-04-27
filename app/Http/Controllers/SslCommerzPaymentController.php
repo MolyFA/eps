@@ -78,7 +78,8 @@ class SslCommerzPaymentController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'transaction_id' => $post_data['tran_id'],
-                'currency' => $post_data['currency']
+                'currency' => $post_data['currency'],
+                "created_at"=> now()->toDateTime(),
             ]);
 
         $sslc = new SslCommerzNotification();
@@ -189,7 +190,7 @@ class SslCommerzPaymentController extends Controller
                 */
                 $update_product = DB::table('paymentsalaries')
                     ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Processing']);
+                    ->update(['status' => 'Processing',"updated_at"=>now()->toDateTime()]);
 
                 echo "<br >Transaction is successfully Completed";
             }

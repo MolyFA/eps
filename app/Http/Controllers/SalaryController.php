@@ -88,8 +88,8 @@ class SalaryController extends Controller
 
 
 
-
-
+ 
+    
     public function viewSalary($salary_id)
     {
         $salary = Salary::find($salary_id);
@@ -199,7 +199,18 @@ class SalaryController extends Controller
 
 
 
+public function salarysearch(Request $request) {
 
+    $user = User::where('name','LIKE','%'.$request->search.'%')->pluck("id")->toArray();
+
+    $employee = Employee::whereIn("user_id", $user)->pluck("id")->toArray();
+    
+
+    $salaries=MonthlySalary::whereIn('employee_id',$employee)->get();
+
+    return view('backend.pages.salary.monthlysalary',compact("salaries"));
+
+}
 
 
 

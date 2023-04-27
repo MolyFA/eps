@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <div class="container">
 <h1>Salary List</h1>
 

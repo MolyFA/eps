@@ -14,7 +14,7 @@
 
 
 
-       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
+       @if(auth()->user()->role->name == 'admin')
        <li class="mega-menu mega-menu-sm">
          <a class="" href="{{route('dashboard')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span class=" ">Dashboard</span>
@@ -24,7 +24,7 @@
 
 
 
-       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
+       @if(auth()->user()->role->name == 'admin')
        <li class="mega-menu mega-menu-sm">
 
          <a class="" href="{{route('department')}}" aria-expanded="false">
@@ -38,7 +38,7 @@
 
 
 
-        @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
+        @if(auth()->user()->role->name == 'admin')
        <li>
          <a class="" href="{{route('employee')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span class="nav-text">Employee</span>
@@ -48,7 +48,7 @@
        @endif
 
 
-       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
+       @if(auth()->user()->role->name == 'admin')
        <li>
          <a class="" href="{{route('designation')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Designation</span>
@@ -104,11 +104,13 @@
        </li>
 
 
+       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
        <li>
          <a class="" href="{{route('leave.report')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Leave Report</span>
          </a>
        </li>
+       @endif
 
 
 

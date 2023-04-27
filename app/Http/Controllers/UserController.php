@@ -69,8 +69,8 @@ public function deleteUser($user_id) {
 
 public function viewUser($user_id)
 {
-  $user=User::find('$user_id');
-  return view('backend.pages.user.view',compact('user'));
+  $users =User::find('$user_id');
+  return view('backend.pages.user.view',compact('users'));
  
 }
 

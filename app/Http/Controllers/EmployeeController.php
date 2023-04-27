@@ -134,9 +134,12 @@ class EmployeeController extends Controller
 
     return redirect()->route('employee.form')->with('message', 'Update success.');
   }
+
+  
   public function getSalary(Request $request){
     $salary = Salary::where("designation_id",$request->id)->first();
 
     return $salary;
   }
+
 }

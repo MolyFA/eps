@@ -7,6 +7,7 @@ use App\Models\Employee;
 use App\Models\MonthlySalary;
 use App\Models\Payment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -56,6 +57,7 @@ class PaymentController extends Controller
 
 
         $salaries = MonthlySalary::whereMonth("created_at",date("m"))->paginate(5);
+        
 
         return view('backend.pages.payment.list', compact("totalPresent","employee_list","payment_list",'salaries'));
     }

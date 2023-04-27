@@ -24,7 +24,6 @@
       <th scope="col">Deduction</th>
       <th scope="col">Bonus</th>
       <th scope="col">Net Salary </th>
-      <th scope="col">Action</th>
       <th scope="col">Get Certificate</th>
     </tr>
   </thead>
@@ -32,10 +31,15 @@
 
   @foreach($salaries as $key=>$data)
 
-@dd($data );
+  @if($data->employee?->user->id == auth()->user()->id || auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
+
+
 
 
   @php
+  if($data->employee == null){
+            continue;
+          }
   $deduction=0;
   if(($data->deduction_id)){
   $ds= $data->deduction;
@@ -74,9 +78,11 @@
       <td scope="col">{{$deduction}}</td>
       <td scope="col">{{$bonus}}</td>
       <td scope="col">{{$grossSalary+$bonus-$deduction}}</td>
-      <td><a href="{{route('salary.calculate',$data->id)}}" class="btn btn-info">Calculate Total Salary</a></td>
+    
       <td><a href="{{route('salary.certificate',$data->id)}}" class="btn btn-info">Salary Certificate</a></td>
     </tr>
+
+    @endif
  
 
     @endforeach

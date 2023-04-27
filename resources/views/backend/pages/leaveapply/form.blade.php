@@ -6,8 +6,8 @@
 <div class="container">
 <h1>LeaveApplying List</h1>
 
-<a href="{{route('leaveapply.form')}}"   class="btn btn-success">Apply For Leave</a>
-
+<a href="{{route('leaveapply.form')}}"   class="btn btn-primary">Apply For Leave</a>
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
 <table class="table">
   <thead>
@@ -29,6 +29,7 @@
 
   @foreach($leaveapply_list as $data)
 
+  @if($data->employee?->user->id == auth()->user()->id || auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
 
  
 
@@ -43,14 +44,19 @@
     
 
     <td>
+
+    @if(auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
               <a href="{{route('leaveapply.reject',$data->id)}}" class="btn btn-outline-danger">Rejected</a>
               <a href="{{route('leaveapply.approve',$data->id)}}" class="btn btn-outline-success">Approve</a>
+    
+    @endif
     </td>
 
 
 
 
 </tr>
+@endif
 @endforeach
 </tbody>
 </table>

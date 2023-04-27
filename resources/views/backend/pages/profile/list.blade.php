@@ -45,23 +45,26 @@ button:hover, a:hover {
 </head>
 <body>
 
-<h2 style="text-align:center">User Info</h2>
+<h2 style="text-align:center">Employee Details</h2>
 
 <div class="card">
   <img src="https://us.123rf.com/450wm/captainvector/captainvector1603/captainvector160310553/106674403-employee.jpg" alt="" style="width:100%">
   
 
-  
 
-  <p class="title">Admin</p>
-  <p>Admin</p>
-  <h2>admin@gmail.com</h2>
-  
-  <p><button class="btn btn-success"></button></p>
+  <p class="title"></p>
+  <p></p>
+  <td>
+  <a href="{{route('profile',$data->id)}}" class="">View</a>
+  </td>
+            
   
 </div>
 
 </body>
 </html>
+
+
+
 
 @endsection

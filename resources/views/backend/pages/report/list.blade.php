@@ -8,6 +8,7 @@ $carbon = new Carbon();
 @endphp
 
 <h1>Attendance Report</h1>
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
 <form action="{{route('attendance.report.search')}}" method="get">
 
@@ -29,8 +30,9 @@ $carbon = new Carbon();
         </select>
     </div>
     <div class="col-md-3">
-        <button type="submit" class="btn btn-success">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
     </div>
+    
 </div>
 </form>
 <table class="table mt-5">

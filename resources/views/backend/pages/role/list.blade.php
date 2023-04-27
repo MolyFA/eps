@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <div class="container">
      <a class="btn btn-primary my-4" href = "{{route('role.create')}}" >Create Role</a>
 <table class="table mt-5">

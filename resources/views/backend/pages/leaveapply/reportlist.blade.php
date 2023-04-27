@@ -6,6 +6,8 @@
 <h1>leave Report list</h1>
 
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
+<label for=""><input type="month" value="2023-04"></label>
+
 <table class="table mt-5">
   <thead>
     <tr class="table-info">

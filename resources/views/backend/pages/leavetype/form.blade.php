@@ -6,6 +6,7 @@
 <h1>LeaveType List</h1>
 
 <a href="{{route('leavetype.form')}}"   class="btn btn-primary">Create LeaveType</a>
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <div class="container">
 
 

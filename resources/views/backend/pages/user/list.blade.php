@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <div class="container">
   <a href="{{route('user.create')}}" class="btn btn-primary my-4">Create User</a>
 <table class="table mt-5">
@@ -19,7 +19,7 @@
   
   @foreach($users as $key=>$data)
 
-  
+ 
   
     <tr>
       <th scope="row">{{$key + 1}}</th>

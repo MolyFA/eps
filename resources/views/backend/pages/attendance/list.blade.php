@@ -5,7 +5,7 @@
 
 <h1>Attendance List</h1>
 
-
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button><br><br>
 <a href="{{route('attendance.check')}}"  class="btn btn-primary">Checkin_Attendance</a>
 <br>
 <br>
