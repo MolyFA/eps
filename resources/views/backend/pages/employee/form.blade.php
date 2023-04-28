@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Employee List</h1>
+<h1 class="text-center display-6">Employee List</h1>
 
 @if(session()->has('message'))
         <p class="alert alert-success">{{session()->get('message')}}</p>

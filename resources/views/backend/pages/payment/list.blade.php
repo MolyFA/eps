@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Payment List</h1>
+<h1 class="text-center display-6">Payment List</h1>
 
 <a href="{{route('payment.list')}}" class="btn btn-primary">Create Payment</a>
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>

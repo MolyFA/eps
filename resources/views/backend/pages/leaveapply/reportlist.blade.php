@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-<h1>leave Report list</h1>
+<h1 class="text-center display-6">leave Report list</h1>
 
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <label for=""><input type="month" value="2023-04"></label>
@@ -23,31 +23,33 @@
   </thead>
   <tbody>
     
+
+  
   
 @foreach ($unique_leave as $key=>$data)
-     
+
+@php
+if($data->employee==null){
+  continue;
+}
+@endphp
+
     <tr>
       <th scope="row">{{$key + 1}}</th>
       <td scope="col">{{$data->employee_id}}</td>
-      <td scope="col">{{$data->employee->user->name}}</td>
-      <td scope="col">{{$data->employee->department->name}}</td>
-      <td scope="col">{{$data->employee->designation->name}}</td>
+      <td scope="col">{{$data->employee?->user->name}}</td>
+      <td scope="col">{{$data->employee?->department->name}}</td>
+      <td scope="col">{{$data->employee?->designation->name}}</td>
       <td scope="col">3</td>
       <td scope="col">{{$data->count}}</td>
       <td scope="col">0</td>
     </tr>
+    
 @endforeach
+
   </tbody>
 </table>
 </div>
-
-
-
-
-
-
-
-
 
 
 

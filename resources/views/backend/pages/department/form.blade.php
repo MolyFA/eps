@@ -1,7 +1,7 @@
 @extends('backend.master')
 @section('content')
 
-<h1>Department List</h1>
+<h1 class="text-center display-6" >Department List</h1>
 
 
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>

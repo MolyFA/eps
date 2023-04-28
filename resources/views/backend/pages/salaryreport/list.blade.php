@@ -2,12 +2,12 @@
 
 
 @section('content')
-<p><h1>Monthly Salary Report</h1><h2></h2></p>
+<h1 class="text-center display-6">Monthly Salary Report</h1>
 
 
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
-<label for=""><input type="month" value="2023-04"></label>
+<h1 class="text-left display-8"><label for=""><input type="month" value="2023-04"></label></h1>
 <table class="table mt-5">
   <thead>
     <tr class="table-info">

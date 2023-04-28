@@ -4,7 +4,7 @@
 
 
 <div class="container">
-<h1>LeaveApplying List</h1>
+<h1 class="text-center display-6">LeaveApplying List</h1>
 
 <a href="{{route('leaveapply.form')}}"   class="btn btn-primary">Apply For Leave</a>
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
@@ -28,10 +28,16 @@
 
 
   @foreach($leaveapply_list as $data)
+@php
+    if($data->employee == null){
+    continue;
+    }
+
+@endphp
 
   @if($data->employee?->user->id == auth()->user()->id || auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
 
- 
+  
 
 <tr>
     <th scope="row">{{$data->id}}</th>
@@ -56,6 +62,7 @@
 
 
 </tr>
+
 @endif
 @endforeach
 </tbody>

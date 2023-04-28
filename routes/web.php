@@ -97,7 +97,7 @@ Route::post("/get-designation",[SalaryController::class,'getDesignation'])->name
 
 Route::get('/generate/salary',[SalaryController::class,'generatesalary'])->name('generate.salary');
 
-Route::post('/save/here/{id}',[SalaryController::class,'savehere'])->name("save.here");
+
 
 
 
@@ -120,7 +120,7 @@ Route::put('/leavetype/update{leavetype_id}',[LeaveTypeController::class,'update
 
 
 
-Route::get('/salary/certificate/{id}',[SalaryReportController::class,'certificate'])->name('salary.certificate');
+
 
 
 
@@ -144,11 +144,16 @@ Route::get('/leaveapply/reject/{leaveapply_id}',[LeaveApplyController::class,'re
 Route::get('/leave/report',[LeaveApplyController::class,'report'])->name('leave.report');
 Route::get('/monthly/salary',[SalaryController::class,'monthlysalary'])->name('monthly.salary');
 Route::get('/salary/calculate/{salary_id}',[SalaryController::class,'salarycalculate'])->name('salary.calculate');
-
+Route::post('/save/here/{id}',[SalaryController::class,'savehere'])->name("save.here");
 
 
 
 });
+
+
+
+
+Route::get('/salary/certificate/{id}',[SalaryReportController::class,'certificate'])->name('salary.certificate');
 
 Route::get('/salary/search',[SalaryController::class,'salarysearch'])->name('salary.search');
 

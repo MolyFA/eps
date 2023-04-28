@@ -58,12 +58,17 @@
 
 
 
+       @if(auth()->user()->role->name == 'admin' || auth()->user()->role->name == 'manager')
        <li>
          <a class="" href="{{route('salary')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Salary</span>
         </a>
        </li>
+       @endif
 
+
+
+       
        <li>
          <a class="" href="{{route('monthly.salary')}}" aria-expanded="false">
            <i class="icon-grid menu-icon"></i><span>Pay Slip</span>
@@ -160,7 +165,7 @@
       <li>
           <a class="" href="{{route('report')}}" aria-expanded="false">
 
-           <i class="icon-grid menu-icon"></i><span>Report generate</span>
+           <i class="icon-grid menu-icon"></i><span>Attendance Report generate</span>
          </a>
       </li>
       @endif

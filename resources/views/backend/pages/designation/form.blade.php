@@ -5,7 +5,7 @@
 
 
 <div class ="container">
-<h1>Designation List</h1>
+<h1 class="text-center display-6">Designation List</h1>
 <a href="{{route('designation.form')}}"   class="btn btn-primary">Create Designation</a>
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 

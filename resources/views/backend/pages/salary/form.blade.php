@@ -3,10 +3,9 @@
 @section('content')
 
 
-<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
+<h1 class="text-center display-6">Salary List</h1>
 <div class="container">
-<h1>Salary List</h1>
-
+<button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 <a href="{{route('salary.form')}}"   class="btn btn-info">Create Salary</a>
 
 

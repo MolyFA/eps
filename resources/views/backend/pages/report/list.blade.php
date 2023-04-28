@@ -7,7 +7,7 @@ use Carbon\Carbon;
 $carbon = new Carbon();
 @endphp
 
-<h1>Attendance Report</h1>
+<h1 class="text-center display-6">Attendance Report</h1>
 <button onclick="window.print(); return false;" class="btn btn-primary">Print</button>
 
 <form action="{{route('attendance.report.search')}}" method="get">
